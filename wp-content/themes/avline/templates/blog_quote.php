@@ -1,0 +1,3 @@
+<blockquote class="article-quote<?php if(get_field('фон')): ?> article-quote--bg<?php endif; ?><?php if(get_field('кавычки_на_фоне')): ?> article-quote--icon<?php endif; ?><?php if(get_field('верхний_регистр')): ?> article-quote--uppercase<?php endif; ?><?php if(get_field('котик_сверху')): ?> article-quote--cat<?php endif; ?><?php if(get_field('граница')): ?> article-quote--border<?php endif; ?><?php if(get_field('прижать_к_правому_краю')): ?> article-quote--right<?php endif; ?>">
+    <span><?=get_field('текст')?></span>
+</blockquote>
