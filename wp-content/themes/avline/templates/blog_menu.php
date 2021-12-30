@@ -14,14 +14,16 @@
 
     <li>
         <a href="/"<?php if ($cat_ID == 0): ?> class="active"<?php endif; ?>>
-            Все
+            Все статьи
         </a>
     </li>
     <?php foreach ($categories_list as $categorie): ?>
+    <?php if ($categorie->name != 'Блог'): ?>
     <li>
         <a href="<?=get_category_link($categorie->cat_ID)?>" <?php if ($cat_ID == $categorie->cat_ID): ?> class="active"<?php endif; ?>>
             <?=$categorie->name ?>
         </a>
     </li>
+    <?php endif; ?>
     <?php endforeach; ?>
 </menu>

@@ -1,7 +1,7 @@
 <?php
 $category = get_category(get_query_var('cat'));
 
-$post_per_page = 3;
+$post_per_page = 5;
 
 $cat_ID = 0;
 
@@ -44,7 +44,7 @@ global $post;?>
                 <h1 class="font-size_46px font-size_35px--768px">
                     СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ 
                 </h1>
-                <h2>
+                <h2 class="font-family_oswald font-transform_uppercase font-weight_400">
                     Это нужно знать о сайтах, рекламе и разработчиках 
                 </h2>
             </div>
@@ -91,14 +91,12 @@ global $post;?>
                 
                 ?>
 
-                <?php if (!array_key_exists('cat_ID', $parameters)): ?>
-                    <?php if (count($posts) > $post_per_page + $offset): ?>
-                    <div class="article-load display_flex justify-content_center">
-                        <button class="article-load__button button button__border button__sienna js-load_more_posts" data-count="5" data-cat-id="<?=$cat_ID?>">
-                            ЗАГРУЗИТЬ ЕЩЕ
-                        </button>
-                    </div>
-                    <?php endif; ?>
+                <?php if (count($posts) >= $post_per_page + $offset): ?>
+                <div class="article-load display_flex justify-content_center">
+                    <button class="article-load__button button button__border button__sienna js-load_more_posts" data-count="5" data-cat-id="<?=$cat_ID?>">
+                        ЗАГРУЗИТЬ ЕЩЕ
+                    </button>
+                </div>
                 <?php endif; ?>
             </div>
         </div>

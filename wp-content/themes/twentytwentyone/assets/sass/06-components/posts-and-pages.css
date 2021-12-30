@@ -5,7 +5,6 @@
 .page-links {
   clear: both;
 }
-
 .page-links .post-page-numbers {
   display: inline-block;
   margin-left: calc(0.66 * var(--global--spacing-unit));
@@ -13,8 +12,6 @@
   min-width: 44px;
   min-height: 44px;
 }
-
 .page-links .post-page-numbers:first-child {
   margin-left: 0;
-}
-/*# sourceMappingURL=posts-and-pages.css.map */
+}/*# sourceMappingURL=posts-and-pages.css.map */

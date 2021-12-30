@@ -8,6 +8,7 @@ function styles() {
     wp_enqueue_style('style', get_template_directory_uri() . '/styles/style.css', [], '0.1');
     wp_enqueue_style('style-font-cuprum', get_template_directory_uri() . '/fonts/Cuprum/stylesheet.css', [], '0.1');
     wp_enqueue_style('style-font-roboto', get_template_directory_uri() . '/fonts/Roboto/stylesheet.css', [], '0.1');
+    wp_enqueue_style('style-font-oswald', get_template_directory_uri() . '/fonts/Oswald/stylesheet.css', [], '0.1');
 }
 
 add_action('wp_enqueue_scripts', 'styles');
@@ -20,6 +21,15 @@ function scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'scripts');
+
+function swiperInit() {
+	wp_enqueue_style('swiper-style', 'https://unpkg.com/swiper@7/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js');
+    wp_enqueue_script('swiper-script', get_template_directory_uri() . '/scripts/swiper-script.js');
+}
+
+add_action('wp_enqueue_scripts', 'swiperInit');
+
 
 function get_template_partial($name, $parameters = []) {
     $_dir = get_template_directory() . '/templates/';
@@ -34,7 +44,7 @@ function setting_callback_function($val){
 		id="<?=$id?>" 
 		value="<?=esc_attr(get_option($val['option_name']))?>" 
 	/> 
-	<?
+	<?php
 }
 
 function add_field_email_to_general_setting(){
@@ -78,6 +88,48 @@ function add_field_telegram_to_general_setting(){
 	);
 }
 add_action('admin_menu', 'add_field_telegram_to_general_setting');
+
+function add_field_personal_telegram_to_general_setting(){
+	$option_name = 'personal_telegram';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'personal_telegram_field', 
+		'Личный телеграм', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'personal_telegram_field', 
+			'option_name' => 'personal_telegram' 
+		)
+	);
+}
+add_action('admin_menu', 'add_field_personal_telegram_to_general_setting');
+
+function add_field_youtube_to_general_setting(){
+	$option_name = 'youtube';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'youtube_field', 
+		'Youtube', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'youtube_field', 
+			'option_name' => 'youtube' 
+		)
+	);
+}
+add_action('admin_menu', 'add_field_youtube_to_general_setting');
 
 function add_field_whatsapp_to_general_setting(){
 	$option_name = 'whatsapp';
@@ -515,14 +567,36 @@ class Breadcrumbs {
  * 1.8 - FIX: заметки, когда в рубрике нет записей
  * 1.7 - Улучшена работа с приоритетными таксономиями.
  */
- 
-// include(get_template_directory() . '/gutenberg/init.php');
 
 acf_register_block_type([
 	'name' => 'special_quote',
 	'title' => 'Особая цитата',
 	'category' => 'common',
-	'render_template' => get_template_directory() . '/templates/blog_quote.php',
+	'render_template' => get_template_directory() . '/templates/post_element_quote.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_repeater',
+	'title' => 'Перечисление',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_repeater.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_repeater_2',
+	'title' => 'Перечисление 2',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_repeater_2.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_slider',
+	'title' => 'Слайдер',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_slider.php',
 	'mode' => 'edit'
 ]);
 
@@ -543,6 +617,8 @@ function jq_get_posts() {
 }
 
 if (wp_doing_ajax()) {
-	add_action( 'wp_ajax_jq_get_posts', 'jq_get_posts' );
-	add_action( 'wp_ajax_nopriv_jq_get_posts', 'jq_get_posts' );
+	add_action('wp_ajax_jq_get_posts', 'jq_get_posts');
+	add_action('wp_ajax_nopriv_jq_get_posts', 'jq_get_posts');
 }
+
+?>

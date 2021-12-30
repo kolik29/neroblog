@@ -14,7 +14,7 @@
                 <img src="<?=get_template_directory_uri();?>/img/logo_brown.png" alt="">
                 <div class="logo__cat" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
             </a>
-            <div class="menu display_grid">
+            <div class="menu display_grid align-items_center">
                 <?php $telegram = get_option('telegram'); ?>
                 <?php if ($telegram != ''): ?>
                 <a href="<?=$telegram?>" class="display_none--768px button button__border button__sienna">

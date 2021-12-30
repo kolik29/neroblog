@@ -20,13 +20,6 @@ Template Name: blog_article
                 </div>
             </div>
 
-            <div class="article-preview display_grid align-items_start">
-                <div class="article-preview__image">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-                <?php the_excerpt(); ?>
-            </div>
-
             <div class="article-body">
                 <?php the_content(); ?>
                 <?php $button = get_field('кнопка_в_конце_статьи'); ?>

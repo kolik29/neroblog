@@ -36,7 +36,7 @@ global $post;?>
         <div class="wrapper">
             <div class="articles-title">
                 <h1 class="font-transform_uppercase">
-                    МОи Статьи НА ТЕМУ <?=get_cat_name($cat_ID);?>
+                    Статьи НА ТЕМУ <?=get_cat_name($cat_ID);?>
                 </h1>
             </div>
             <div class="articles-list">
