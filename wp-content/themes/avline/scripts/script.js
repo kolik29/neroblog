@@ -20,9 +20,32 @@ $(() => {
     })
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() + $(this).height() >= $('body').height())
+        if ($(this).scrollTop() >= 100)
             $('#scroll_top').fadeIn();
         else
             $('#scroll_top').fadeOut();
+    })
+
+    $('.js-social-icons__button').on('click', function() {
+        $(this).toggleClass('active');
+
+        if ($(this).hasClass('active'))
+            $(this).next('.social-icons__list').css({
+                'height': $(this).next('.social-icons__list').find('.social-icons__link').length * 60
+            })
+        else
+            $(this).next('.social-icons__list').css({
+                'height': ''
+            })
+    })
+
+    $('.js-show-menu-slide').on('click', () => {
+        $('#menu-slide-bg').fadeIn();
+        $('#menu-slide').addClass('active');
+    })
+
+    $('.js-hide-menu-slide').on('click', () => {
+        $('#menu-slide-bg').fadeOut();
+        $('#menu-slide').removeClass('active');
     })
 })

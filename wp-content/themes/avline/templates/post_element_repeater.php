@@ -2,7 +2,9 @@
     <div class="repeater-number">
         <?=get_field('номер')?>
     </div>
-    <h3 class="repeater-title"><?=get_field('название')?></h3>
+    <?php if (get_field('название') != ''): ?>
+        <h3 class="repeater-title"><?=get_field('название')?></h3>
+    <?php endif; ?>
     <div class="display_grid flex-direction_column--425px repeater-text">
         <div><?=get_field('текст_слева')?></div>
         <div>

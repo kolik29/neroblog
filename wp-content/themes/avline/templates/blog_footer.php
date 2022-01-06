@@ -6,7 +6,7 @@
                 <span>
                     подпишитесь на мой телеграм-канал, чтобы ничего не пропустить
                 </span>
-                <a href="<?=$telegram?>" class="button button__sienna button--active social-bg--telegram">
+                <a target="_blank" href="<?=$telegram?>" class="button button__sienna button--active social-bg--telegram">
                     ПОДПИСАТЬСЯ
                 </a>
             </div>

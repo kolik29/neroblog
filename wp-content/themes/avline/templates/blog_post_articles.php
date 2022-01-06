@@ -52,12 +52,12 @@ global $post;?>
                             <div class="article-item__content-subject font-family_cuprum">
                                 <?php the_category(); ?>
                             </div>
-                            <h1>
-                                <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <h1>
                                     <?php the_title(); ?>
-                                </a>
-                            </h1>
-                            <?php the_excerpt(); ?>
+                                </h1>
+                                <?php the_excerpt(); ?>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>

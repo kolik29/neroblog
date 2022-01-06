@@ -41,12 +41,16 @@ global $post;?>
     <section id="blog_articles" class="display_flex justify-content_center">
         <div class="wrapper">
             <div class="articles-title">
-                <h1 class="font-size_46px font-size_35px--768px">
-                    СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ 
+                <h1 class="font-size_46px font-size_35px--768px font-size_26px--425px">
+                    <?php $term = get_queried_object(); ?>
+                    <?php if (get_field('статьи_о', $term) == ''): ?>
+                        СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ 
+                    <?php else: ?>
+                        <?php
+                        echo 'Статьи о '.get_field('статьи_о', $term);
+                        ?>
+                    <?php endif; ?>
                 </h1>
-                <h2 class="font-family_oswald font-transform_uppercase font-weight_400">
-                    Это нужно знать о сайтах, рекламе и разработчиках 
-                </h2>
             </div>
             <div class="articles-list">
 
@@ -62,12 +66,12 @@ global $post;?>
                             <div class="article-item__content-subject font-family_cuprum">
                                 <?php the_category(); ?>
                             </div>
-                            <h1>
-                                <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <h1>
                                     <?php the_title(); ?>
-                                </a>
-                            </h1>
-                            <?php the_excerpt(); ?>
+                                </h1>
+                                <?php the_excerpt(); ?>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -84,16 +88,13 @@ global $post;?>
                     'suppress_filters' => true,
                 ]);
 
-                $offset = $post_per_page;
-
                 if (array_key_exists('offset', $_POST))
                     $offset = $_POST['offset'] ? $_POST['offset'] : $offset;
-                
                 ?>
 
                 <?php if (count($posts) >= $post_per_page + $offset): ?>
                 <div class="article-load display_flex justify-content_center">
-                    <button class="article-load__button button button__border button__sienna js-load_more_posts" data-count="5" data-cat-id="<?=$cat_ID?>">
+                    <button class="article-load__button button button__black js-load_more_posts" data-count="5" data-cat-id="<?=$cat_ID?>">
                         ЗАГРУЗИТЬ ЕЩЕ
                     </button>
                 </div>

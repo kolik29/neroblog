@@ -173,6 +173,69 @@ function viber_to_general_setting(){
 }
 add_action('admin_menu', 'viber_to_general_setting');
 
+function messenger_to_general_setting(){
+	$option_name = 'messenger';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'messenger_field', 
+		'Messenger', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'messenger_field', 
+			'option_name' => 'messenger' 
+		)
+	);
+}
+add_action('admin_menu', 'messenger_to_general_setting');
+
+function skype_to_general_setting(){
+	$option_name = 'skype';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'skype_field', 
+		'Skype', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'skype_field', 
+			'option_name' => 'skype' 
+		)
+	);
+}
+add_action('admin_menu', 'skype_to_general_setting');
+
+function facebook_to_general_setting(){
+	$option_name = 'facebook';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'facebook_field', 
+		'Facebook', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'facebook_field', 
+			'option_name' => 'facebook' 
+		)
+	);
+}
+add_action('admin_menu', 'facebook_to_general_setting');
+
 /**
  * Хлебные крошки для WordPress (breadcrumbs)
  *
@@ -619,6 +682,126 @@ function jq_get_posts() {
 if (wp_doing_ajax()) {
 	add_action('wp_ajax_jq_get_posts', 'jq_get_posts');
 	add_action('wp_ajax_nopriv_jq_get_posts', 'jq_get_posts');
+}
+
+/* Дублировать статью */
+
+add_filter( 'post_row_actions', 'duplicate_post_link', 10, 2 );
+
+function duplicate_post_link($actions, $post) {
+
+	if (!current_user_can('edit_posts'))
+		return $actions;
+
+	$url = wp_nonce_url(
+		add_query_arg(
+			[
+				'action' => 'duplicate_post_as_draft',
+				'post' => $post->ID,
+			],
+			'admin.php'
+		),
+		basename(__FILE__),
+		'duplicate_nonce'
+	);
+
+	$actions['duplicate'] = '<a href="' . $url . '" title="Клонировать пост" rel="permalink">Клонировать</a>';
+
+	return $actions;
+}
+
+add_action('admin_action_duplicate_post_as_draft', 'duplicate_post_as_draft');
+
+function duplicate_post_as_draft() {
+	if (empty($_GET[ 'post' ]))
+		wp_die('Статьи для клонирования нет!');
+
+	if (!isset($_GET['duplicate_nonce']) || !wp_verify_nonce($_GET['duplicate_nonce'], basename(__FILE__)))
+		return;
+
+	$post_id = absint($_GET['post']);
+
+	$post = get_post($post_id);
+
+	$current_user = wp_get_current_user();
+	$new_post_author = $current_user->ID;
+
+	if ($post) {
+		$args = array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $new_post_author,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title,
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order
+		);
+
+		$new_post_id = wp_insert_post( $args );
+
+		$taxonomies = get_object_taxonomies(get_post_type($post));
+		
+		if ($taxonomies)
+			foreach ($taxonomies as $taxonomy)
+				$post_terms = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'slugs'));
+				wp_set_object_terms($new_post_id, $post_terms, $taxonomy, false);
+
+		$post_meta = get_post_meta($post_id);
+		
+		if ($post_meta)
+			foreach ($post_meta as $meta_key => $meta_values) {
+				if('_wp_old_slug' == $meta_key)
+					continue;
+
+				foreach ($meta_values as $meta_value)
+					add_post_meta($new_post_id, $meta_key, $meta_value);
+			}
+
+		// редирект на экран рекдактирования
+		// wp_safe_redirect(
+		// 	add_query_arg(
+		// 		array(
+		// 			'action' => 'edit',
+		// 			'post' => $new_post_id
+		// 		),
+		// 		admin_url( 'post.php' )
+		// 	)
+		// );
+		// exit;
+		// 
+		
+		wp_safe_redirect(
+			add_query_arg(
+				[
+					'post_type' => ('post' !== get_post_type($post) ? get_post_type($post) : false),
+					'saved' => 'post_duplication_created' // just a custom slug here
+				],
+				admin_url('edit.php')
+			)
+		);
+		exit;
+
+	} else
+		wp_die('Ошибка создания поста, не удалось найти оригинал.');
+
+}
+
+add_action('admin_notices', 'duplication_admin_notice' );
+
+function duplication_admin_notice() {
+	$screen = get_current_screen();
+
+	if ('edit' !== $screen->base)
+		return;
+
+    if (isset($_GET['saved']) && 'post_duplication_created' == $_GET['saved'])
+		 echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
 }
 
 ?>

@@ -7,18 +7,7 @@ $color_sienna: #98764b
     &_initial
         text-transform: initial
     
-.display
-    &_flex
-        display: flex
-
-        @media screen and (max-width: 425px)
-            &--425px
-                display: flex
-
-        @media screen and (max-width: 768px)
-            &--768px
-                display: flex
-    
+.display    
     &_grid
         display: grid
 
@@ -32,6 +21,17 @@ $color_sienna: #98764b
         @media screen and (max-width: 768px)
             &--768px
                 display: none !important
+    
+    &_flex
+        display: flex
+
+        @media screen and (max-width: 425px)
+            &--425px
+                display: flex !important
+
+        @media screen and (max-width: 768px)
+            &--768px
+                display: flex
 
     &_block
         display: block !important
@@ -75,6 +75,9 @@ $color_sienna: #98764b
             &--425px
                 align-items: center
 
+    &_end
+        align-items: end
+
 .justify-content    
     &_space-between
         justify-content: space-between
@@ -96,11 +99,35 @@ $color_sienna: #98764b
             &--425px
                 justify-content: center
 
+.line-height
+    &_29px
+        line-height: 29px
+
+    &_22px
+        @media screen and (max-width: 768px)
+            &--425px
+                line-height: 22px
+
+    &_23px
+        line-height: 23px
+
 .margin
     &_0
         margin: 0
 
     &-top
+        &_3px
+            margin-top: 3px
+
+        &_10px
+            margin-top: 10px !important
+
+        &_20px
+            margin-top: 20px !important
+
+        &_21px
+            margin-top: 21px
+
         &_27px
             margin-top: 27px
 
@@ -110,9 +137,39 @@ $color_sienna: #98764b
         &_1em
             margin-top: 1em !important
 
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1em !important
+
+        &_075em
+            margin-top: 0.75em !important
+
+        &_68px
+            margin-top: 68px
+
+        &_120px
+            margin-top: 120px
+
+        &_150px
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 150px
+
+        &_-2px
+            margin-top: -2px
+
+
+        &_0
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 0 !important
+
     &-bottom
+        &_40px
+            margin-bottom: 40px !important
+
         &_30px
-            margin-bottom: 30px
+            margin-bottom: 30px !important
         
         &_10px
             margin-bottom: 10px
@@ -120,10 +177,38 @@ $color_sienna: #98764b
         &_1em
             margin-bottom: 1em
 
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 1em
+
+        &_05em
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 0.5em
+
+        &_2em
+            margin-bottom: 2em
+
     &-y
         &_25px
             margin-top: 25px
             margin-bottom: 25px
+
+    &-left
+        &_1em
+            margin-left: 1em !important
+
+        &_61px
+            margin-left: 61px !important
+
+        &_1px
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-left: 1px !important
+
+.transform
+    &_translateX_50
+        transform: translateX(50%)
 
 .padding
     &_0
@@ -132,22 +217,37 @@ $color_sienna: #98764b
     &-top
         &_15px
             padding-top: 15px !important
+        
+        &_20px
+            padding-top: 20px !important
+        
+        &_25px
+            padding-top: 25px !important
 
-    &-top
-        &_60px
-            padding-top: 60px !important
-
-    &-top
         &_30px
             padding-top: 30px !important
 
+        &_60px
+            padding-top: 60px !important
+
+        &_110px
+            padding-top: 110px !important
+
     &-bottom
+        &_14px
+            padding-bottom: 14px !important
+
         &_30px
             padding-bottom: 30px !important
 
-    &-bottom
+        &_40px
+            padding-bottom: 40px !important
+
         &_60px
             padding-bottom: 60px !important
+
+        &_110px
+            padding-bottom: 110px !important
 
 .font
     &-color
@@ -184,6 +284,9 @@ $color_sienna: #98764b
         &_600
             font-weight: 600
 
+        &_700
+            font-weight: 700
+
         &_900
             font-weight: 900
 
@@ -195,17 +298,57 @@ $color_sienna: #98764b
                 &--425px
                     text-align: center
 
+        &_left
+            text-align: left
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    text-align: left
+
     &-size
-        &_16px
-            font-size: 16px
-        
         &_46px
             font-size: 46px
+
+        &_44px
+            font-size: 44px
+
+        &_43px
+            font-size: 43px
+
+        &_37px
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 37px
 
         &_35px
             @media screen and (max-width: 768px)
                 &--768px
                     font-size: 35px
+
+        &_26px
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 26px
+
+        &_20px
+            font-size: 20px
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 20px
+        
+        &_22px
+            font-size: 22px
+        
+        &_18px
+            font-size: 18px
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 18px
+
+        &_16px
+            font-size: 16px
 
     &-transform
         &_uppercase
@@ -221,11 +364,17 @@ $color_sienna: #98764b
         padding-left: 0
         padding-right: 0
 
+    @media screen and (min-width: 425px)
+        padding-left: 30px
+        padding-right: 30px
+        width: calc(100% - 60px)
+
 .button
     display: inline-block
     text-decoration: none
     @extend .font-family_cuprum
     text-transform: uppercase
+    transition: .3s
 
     &__border
         border-width: 1px
@@ -240,10 +389,17 @@ $color_sienna: #98764b
             background-color: $color_sienna
             @extend .font-color_white
 
+    &__black
+        background-color: #333 !important
+        color: #fff
+        border: unset
+
+        &:hover
+            background-color: $color_sienna !important
+
     &__white
         border-color: #fff
         @extend .font-color_white
-        transition: .3s
 
         &:hover
             background-color: #fff
@@ -266,6 +422,12 @@ $color_sienna: #98764b
 
     &_50
         width: 50%
+
+    &_65
+        width: 65%
+
+    &_40
+        width: 40%
         
 .height
     &_100
@@ -277,9 +439,20 @@ $color_sienna: #98764b
     &_unset
         height: unset
 
+        @media screen and (max-width: 425px)
+            &--425px
+                height: unset
+
 .min-height
     &_100vh
         min-height: 100vh
+
+    &_unset
+        min-height: unset
+
+        @media screen and (max-width: 425px)
+            &--425px
+                min-height: unset
 
 .max-height
     &_100vh
@@ -355,24 +528,26 @@ header
     z-index: 20
 
     nav
-        padding: 19px 0 8px 0
-        margin-bottom: 9px
+        padding: 18.5px 0 18.5px 0
+
+        @media screen and (max-width: 425px)
+            &:not(:last-child)
+                border-bottom: 2px solid #ccc
 
         .logo
             grid-template-columns: auto auto
             column-gap: 9px
-            transform: translate(0, 3px)
             transition: .3s
 
             img
-                height: 46px
+                height: 38px
 
                 @media screen and (max-width: 768px)
                     height: 35px
                 
             &__cat
-                height: 37px
-                width: 85px
+                height: 39px
+                width: 78px
                 transform: translateY(3px)
                 background-color: $color_sienna
                 mask-size: contain
@@ -381,6 +556,9 @@ header
                 @media screen and (max-width: 768px)
                     height: 27px
                     width: 64px
+
+                @media screen and (max-width: 425px)
+                    display: none
 
             &:hover
                 transform: translate(0, 3px) scale(1.1, 1.1)
@@ -403,8 +581,7 @@ header
 
             .button
                 font-size: 15px
-                padding: 18px 18px 13px 23px
-                line-height: 12px
+                padding: 15px 18px 15px 23px
                 letter-spacing: 1.1px
                 font-weight: 700
 
@@ -426,9 +603,6 @@ footer
         &:before
             background-color: #fff
 
-        &:hover::before
-            background-color: $color_sienna
-
     .delimeter
         background-color: #ffffff33
         width: 100%
@@ -446,6 +620,7 @@ footer
 
             &__copyright
                 transform: translateY(4px)
+                color: darken(#fff, 20)
 
                 .logo
                     width: 100px
@@ -470,8 +645,10 @@ footer
                         text-decoration: unset
 
                 p
-                    font-size: 12px
-                    font-weight: 200
+                    font-size: 13px
+                    font-weight: 300
+                    color: #d6d6d6
+                    line-height: 1.55
 
                 @media screen and (max-width: 768px)
                     text-align: center
@@ -484,11 +661,7 @@ footer
                     column-gap: 10px
 
                 @media screen and (max-width: 425px)
-                    grid-template-columns: 1fr 1fr
-
-                    div:nth-child(3)
-                        grid-column-start: 1
-                        grid-column-end: 3
+                    grid-template-columns: 1fr
 
                 h2
                     font-size: 20px
@@ -522,8 +695,9 @@ footer
 
         &-bottom
             font-size: 12px
-            color: #fff
-            font-weight: 200
+            color: #6e6e6e
+            font-weight: 400
+            line-height: 1.55
 
             a
                 color: #999
@@ -531,9 +705,6 @@ footer
 
     a
         transition: .3s
-
-        &:hover
-            color: #b4874e !important
 
     .subscribe
         grid-template-columns: auto auto
@@ -560,8 +731,14 @@ main
     > .space
         height: 100px
 
+        @media screen and (max-width: 425px)
+            height: 150px
+
 .blog-title__menu
     max-width: calc(100vw - 20px)
+
+    @media screen and (max-width: 425px)
+        max-width: calc(100vw - 60px)
 
     menu
         overflow-x: auto
@@ -583,6 +760,9 @@ main
             &:hover,
             &.active
                 color: $color_sienna
+
+            &.active
+                pointer-events: none
 
     &:before,
     &:after
@@ -607,16 +787,22 @@ main
         background-image: url('../img/bg_blog_title.png')
         background-position: center
 
+        @media screen and (max-width: 425px)
+            background-image: unset
+
         .wrapper
             padding-top: 205px
             padding-bottom: 20px
 
             @media screen and (max-width: 425px)
-                padding-top: 120px
+                padding-top: 150px
         
         .blog-title
             &__content
                 margin-top: 68px
+
+                @media screen and (max-width: 425px)
+                    margin-top: 30px
 
                 img
                     width: unset
@@ -638,6 +824,12 @@ main
             letter-spacing: -.7px
             margin-bottom: 26px
 
+            @media screen and (max-width: 425px)
+                font-size: 22px
+                margin-bottom: 10px
+                padding-bottom: 10px
+                border-bottom: 2px solid #98764b
+
     &_articles
         padding-top: 50px
         overflow-x: hidden
@@ -645,14 +837,23 @@ main
         @media screen and (max-width: 768px)
             padding-top: 50px
 
+        @media screen and (max-width: 425px)
+            padding-top: 25px
+
         .articles
             &-title
                 margin-bottom: 24px
+
+                @media screen and (max-width: 425px)
+                    margin-bottom: 0
 
                 h1
                     border-bottom: 3px solid $color_sienna
                     font-weight: 400
                     padding-bottom: 13px
+
+                    @media screen and (max-width: 425px)
+                        padding-bottom: 6px
 
                 h2
                     font-size: 24px
@@ -723,17 +924,31 @@ main
                             h1
                                 font-size: 28px
                                 margin-top: 22px
+                                margin-bottom: 15px
                                 letter-spacing: -0.7px
+                                transition: .3s
+                                font-weight: 400
 
-                                a
-                                    text-decoration: none
-                                    color: #000
+                                &:hover
+                                    color: $color_sienna
+
+                                @media screen and (max-width: 425px)
+                                    font-size: 22px
+
+                            a
+                                text-decoration: none
+                                color: #000
+                                transition: .3s
 
                             p
-                                margin-top: 15px
                                 line-height: 24px
                                 letter-spacing: -0.2px
                                 @extend .font-family_roboto
+                                transition: .3s
+
+                            &:hover
+                                p
+                                    color: #575757
 
                     &-load
                         margin: 58px 0
@@ -773,6 +988,9 @@ main
         @media screen and (max-width: 768px)
             padding-top: 100px
 
+        @media screen and (max-width: 425px)
+            padding-top: 150px
+
         .article
             &-head
                 h1
@@ -787,6 +1005,7 @@ main
                 grid-template-columns: auto auto
                 column-gap: 12px
                 margin-top: 10px
+                margin-bottom: 30px
                 @extend .font-family_roboto
 
             &-preview
@@ -822,6 +1041,9 @@ main
                     @extend .display_flex
                     @extend .align-items_center
 
+                    @media screen and (max-width: 425px)
+                        padding: 45px 30px 45px 30px
+
                     &--bg
                         background-color: $color_sienna
                         color: #fff
@@ -854,6 +1076,9 @@ main
                         border: 1px solid $color_sienna
                         padding: 45px 60px 45px 60px
 
+                        @media screen and (max-width: 425px)
+                            padding: 25px 30px 25px 30px
+
                     &--right
                         padding: 15px 31px 45px 125px
                         width: calc(50% - 126px)
@@ -863,9 +1088,15 @@ main
                             width: unset
                             margin: 0
 
+                        @media screen and (max-width: 425px)
+                            padding: 15px 30px 45px 30px
+
                     &--cat
                         position: relative
                         padding: 45px 60px 45px 60px
+
+                        @media screen and (max-width: 425px)
+                            padding: 25px 30px 25px 30px
 
                         &:before
                             content: ''
@@ -966,6 +1197,10 @@ main
                     &:last-child
                         margin-right: 0
 
+#blog_articles + #blog_post_menu
+    menu
+        border-top: unset
+
 #blog_footer
     background-color: #000
     margin-bottom: -16px
@@ -1046,12 +1281,13 @@ main
     overflow-x: auto
 
     menu
-        margin-top: 35px
         max-width: calc(100vw - 20px)
         overflow-x: auto
         overflow-y: hidden
         -ms-overflow-style: none
         overflow: -moz-scrollbars-none
+        padding: 35px 0
+        border-top: 1px solid #0d0e0e4d
 
         &::-webkit-scrollbar
             display: none
@@ -1085,7 +1321,6 @@ main
 
 .page_post_bottom
     background-color: #f8f8f8
-    padding: 35px 0
 
 header
     .menu
@@ -1125,22 +1360,45 @@ header
                 background-color: #fff !important
 
 #scroll_top
-    width: 100px
-    height: 100px
+    height: calc(100vh - 75px)
+    width: calc((100% - 1160px) / 2)
     @extend .position_fixed
-    bottom: 0
     z-index: 999
-    mask-image: url('../img/icons8-chevron-up-100.png')
-    background-color: #ffffff1a
-    margin-bottom: 15px
-    margin-left: 30px
+    margin-top: 86px
     cursor: pointer
     display: none
+    transition: .3s
 
-    @media screen and (max-width: 425px)
-        left: 50%
-        transform: translateX(-50%)
-        margin-left: 0
+    @media screen and (max-width: 1360px)
+        display: none !important
+
+    .text
+        height: 100%
+        width: 100%
+        max-width: 150px
+        display: grid
+        justify-content: center
+        align-items: baseline
+        grid-template-columns: auto auto
+        column-gap: 10px
+        padding-top: 10px
+        @extend .font-family_roboto
+        opacity: 0.5
+        transition: .3s
+
+        &:before
+            content: ''
+            width: 15px
+            height: 15px
+            mask-image: url('../img/icons8-chevron-up-100.png')
+            mask-size: cover
+            background-color: #000
+            display: block
+
+    &:hover
+        .text
+            background-color: #a0a0a033
+            opacity: 0.8
 
 .repeater
     .tn-atom
@@ -1168,6 +1426,9 @@ header
                 margin-left: 0
                 left: 50%
                 transform: translateX(-50%)
+                font-size: 350px
+                font-weight: 500
+                margin-top: 0
 
     &_1
         position: relative
@@ -1183,10 +1444,17 @@ header
 
             @media screen and (max-width: 425px)
                 grid-template-columns: 1fr
+                row-gap: 1.5em
+
+                blockquote
+                    padding-left: 0 !important
+
+                    &:before
+                        left: 0 !important
 
     &_2
         position: relative
-        @extend .font-family_cuprum
+        @extend .font-family_roboto
         line-height: 1.55
 
         .repeater
@@ -1200,6 +1468,10 @@ header
                 margin-left: 0
                 position: absolute
                 margin-top: -26px
+                color: #f0eae4
+
+                @media screen and (max-width: 425px)
+                    transform: translateX(0)
 
 .element-background
     color: #fff
@@ -1226,6 +1498,9 @@ article
         margin-bottom: 26px
         font-size: 30px
         font-weight: 400
+
+        @media screen and (max-width: 425px)
+            font-size: 24px
 
         &.has-background
             position: relative
@@ -1379,13 +1654,49 @@ article
 .opacity_02
     opacity: 0.2
 
-.flex-column_10-90
-    .wp-block-column
-        &:first-child
-            flex-basis: 10% !important
+.flex-column
+    &_10-90
+        .wp-block-column
+            &:first-child
+                flex-basis: 10% !important
 
-        &:last-child
-            flex-basis: 90% !important
+            &:last-child
+                flex-basis: 90% !important
+    
+    &_20-80
+        .wp-block-column
+            &:first-child
+                flex-basis: 20% !important
+
+            &:last-child
+                flex-basis: 80% !important
+
+    &_27-73
+        .wp-block-column
+            &:first-child
+                flex-basis: 27% !important
+
+            &:last-child
+                flex-basis: 73% !important
+
+    &_28-72
+        .wp-block-column
+            &:first-child
+                flex-basis: 28% !important
+
+            &:last-child
+                flex-basis: 72% !important
+
+    &_8-92
+        .wp-block-column
+            &:first-child
+                flex-basis: 8% !important
+
+            &:last-child
+                flex-basis: 92% !important
+
+                @media screen and (max-width: 768px)
+                    flex-basis: 80% !important
 
 .wp-block-columns.has-background
     padding-left: 0
@@ -1393,6 +1704,15 @@ article
 
 .wp-block-separator
     border-top: unset
+
+    &.height-3px
+        height: 3px
+
+    &.margin-top_14px
+        margin-top: 14px
+
+    &.margin-bottom_41px
+        margin-bottom: 41px
 
 .bg-whitesmoke
     background-color: #f8f8f8
@@ -1404,10 +1724,11 @@ article
         &::before
             content: ''
             width: 100%
-            background-color: #cccccc
+            background-color: #98764b
             height: 1px
             left: 50%
             transform: translateX(-50%)
+            z-index: 10
 
         &:after
             content: ''
@@ -1415,8 +1736,414 @@ article
             left: 0
             background-color: #f8f8f8
             width: 100vw
+            margin-left: 50%
+            left: -50vw
+            height: 100%
+            top: 0
         
 .wp-block-column
     .wp-block-buttons
         a:hover
             color: #fff
+
+.link-padding_0
+    a
+        padding: 0 !important
+
+.link-text-decoration_none
+    a
+        text-decoration: none
+
+.columns-separator
+    .wp-block-column:not(:last-child)
+        border-right: 1px solid #000
+
+        @media screen and (max-width: 768px)
+            border-right: unset
+
+#page404
+    min-width: 100%
+    min-height: 100vh
+    background-image: url('../img/404/backround_404.jpg')
+    background-size: cover
+    display: flex
+    justify-content: center
+
+    @media screen and (max-width: 768px)
+        align-items: center
+
+    .number-404
+        margin-top: 6vh
+        position: absolute
+        max-width: 100%
+
+        @media screen and (max-width: 768px)
+            margin-top: unset
+
+    .wrapper-404
+        z-index: 10
+        height: 100vh
+        padding: 0 10px
+
+        > div
+            grid-template-columns: auto 1fr
+            column-gap: 40px
+
+    .cat-404
+        @media screen and (max-width: 768px)
+            width: 25vw
+
+    .text-404
+        @media screen and (max-width: 768px)
+            grid-column-start: 1
+            grid-row-start: 1
+
+    h1
+        font-size: 30px
+        line-height: 36px
+
+    p
+        font-family: Roboto
+        font-size: 18px
+        line-height: 27px
+        margin-top: 25px
+        font-weight: 500
+        max-width: 505px
+
+    .sign-404
+        text-align: right
+
+    .button
+        margin-top: 25px
+        font-size: 18px
+        line-height: 28px
+        padding: 13px 63px
+        background-color: $color_sienna
+        transition: .3s
+        color: #fff
+        border: unset
+
+        &:hover
+            background-color: lighten($color_sienna, 20%)
+
+.kama_breadcrumbs
+    a
+        transition: .3s
+        
+        &:hover
+            color: #575757
+
+#social-networks
+    position: fixed
+    bottom: 0
+    right: 0
+    z-index: 3000
+    margin-bottom: 15px
+    margin-right: 15px
+
+    @media screen and (max-width: 425px)
+        display: none
+
+    .social-icons
+        &__button
+            width: 64px
+            height: 64px
+            border: 2px solid $color_sienna
+            border-radius: 100%
+            background-color: $color_sienna
+            position: relative
+            transition: .3s
+            cursor: pointer
+            box-shadow: 0 0 20px 0 rgb(0, 0, 0, 40%)
+
+            &:after,
+            &:before
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                mask-repeat: no-repeat
+                mask-position: center
+                transition: .3s
+
+            &:after
+                mask-image: url('../img/social/messenger.png')
+                background-color: #fff
+                mask-size: 50%
+
+            &:before
+                mask-image: url('../img/social/close.png')
+                background-color: #000
+                mask-size: 25%
+                opacity: 0
+                transform: scale(0)
+
+            &.active
+                background-color: #fff
+
+                &:after
+                    opacity: 0
+                    transform: scale(0)
+                
+                &:before
+                    opacity: 1
+                    transform: scale(1)
+
+        &__list
+            flex-direction: column
+            position: absolute
+            bottom: 100%
+            left: 50%
+            transform: translateX(-50%) translateY(32px)
+            width: 50px
+            height: 0
+            z-index: -1
+            overflow: hidden
+ 
+        &__link
+            margin-bottom: 10px
+            width: 50px
+            height: 50px
+            min-width: 50px
+            min-height: 50px
+
+            &:after
+                background-color: #fff
+                mask-size: 50%
+
+            &--email
+                background-color: #168de2
+
+                &:after
+                    mask-image: url('../img/social/email.png')
+
+            &--skype
+                background-color: #00b2f0
+
+                &:after
+                    mask-image: url('../img/social/skype.png')
+
+            &--messenger
+                background-color: #0284fe
+
+                &:after
+                    mask-image: url('../img/social/messenger.png')
+
+            &--viber
+                background-color: #935bbe
+
+                &:after
+                    mask-image: url('../img/social/viber.png')
+
+            &--whatsapp
+                background-color: #27d061
+
+                &:after
+                    mask-image: url('../img/social/whatsapp.png')
+
+            &--telegram
+                background-color: #0087d0
+
+                &:after
+                    mask-image: url('../img/social/telegram.png')
+
+    .social-icons__button.active + .social-icons__list
+        transform: translateX(-50%)
+
+#social-networks-header
+    .social-icons
+        &__link
+            margin-right: 10px
+            width: 20px
+            height: 20px
+
+            &:after
+                background-color: #000
+                mask-size: 100%
+
+            &--email
+                &:after
+                    mask-image: url('../img/social/email-circuit.png')
+
+            &--skype
+                &:after
+                    mask-image: url('../img/social/skype-circuit.png')
+
+            &--messenger
+                &:after
+                    mask-image: url('../img/social/messenger-circuit.png')
+
+            &--viber
+                &:after
+                    mask-image: url('../img/social/viber-circuit.png')
+
+            &--whatsapp
+                &:after
+                    mask-image: url('../img/social/whatsapp-circuit.png')
+
+            &--telegram
+                &:after
+                    mask-image: url('../img/social/telegram-circuit.png')
+
+            &:hover
+                transform: scale(1.3)
+
+.social-icons
+    &__list
+        display: flex
+        transition: .3s
+ 
+    &__link
+        border-radius: 100%
+        transition: .3s
+        display: grid
+        grid-template-rows: 1fr
+        position: relative
+        padding: 0 !important
+
+        &:after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            mask-position: center
+            mask-repeat: no-repeat
+
+.wp-block-image
+    img
+        width: 100%
+        height: unset
+
+.hide-img-on-425px
+    > figure
+        img
+            @media screen and (max-width: 425px)
+                display: none
+
+.wp-block-media-text .wp-block-media-text__content
+    padding: 0 !important
+
+.article-quote
+    p
+        &::before
+            display: none
+
+.menu-slide-icon
+    position: relative
+    height: 1em
+    width: 50px
+
+    &:after,
+    &:before
+        position: absolute
+        content: ''
+        background-color: #000
+        height: 3px
+        width: 100%
+
+    &:before
+        bottom: 0
+
+#menu-slide-bg
+    position: fixed
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+    z-index: 2999
+    transition: background .3s
+    background-color: #000000b3
+    display: none
+
+#menu-slide
+    height: calc(100vh - 70px)
+    width: calc(75vw - 53px)
+    background-color: #11191f
+    padding: 40px 27px 30px
+    position: fixed
+    right: 0
+    transform: translateX(100%)
+    transition: .3s
+    z-index: 3000
+
+    .menu
+        &-list
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            transition: .3s
+            height: 100%
+
+            &-close
+                position: fixed
+                display: flex
+                justify-content: center
+                align-items: center
+                right: 0
+                top: 0
+                width: 24px
+                height: 24px
+                margin: 13px 14px 0 0
+
+                &:after,
+                &:before
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    background-color: #fff
+                    height: 2px
+
+                &:after
+                    transform: rotate(-45deg)
+
+                &:before
+                    transform: rotate(45deg)
+
+            .menu
+                li
+                    color: #dadada
+                    @extend .font-family_cuprum
+                    font-size: 24px
+                    transition: .3s
+                    text-transform: uppercase
+                    margin-bottom: 17px
+
+                    &.current-menu-item,
+                    &:hover
+                        color: #98764b
+
+        &-social
+            display: flex
+
+            &-icon
+                width: 30px
+                height: 30px
+                display: block
+                border-radius: 100%
+                background-color: #fff
+                position: relative
+                margin-right: 7px
+
+                &:after
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    mask-size: 60%
+                    mask-position: center
+                    mask-repeat: no-repeat
+                    background-color: #11191f
+
+                &--facebook:after
+                    mask-image: url('../img/social/facebook_filled.png')
+
+                &--youtube:after
+                    mask-image: url('../img/social/youtube_filled.png')
+
+                &--telegram:after
+                    mask-image: url('../img/social/telegram_filled.png')
+
+    
+
+    &.active
+        transform: translateX(0)
