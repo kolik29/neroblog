@@ -40,8 +40,8 @@ global $post;?>
 <?php if (count($posts) > 0): ?>
     <section id="blog_articles" class="display_flex justify-content_center">
         <div class="wrapper">
-            <div class="articles-title">
-                <h1 class="font-size_46px font-size_35px--768px font-size_26px--425px">
+            <div class="articles-title display_flex--425px justify-content_center">
+                <h1 class="font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
                     <?php $term = get_queried_object(); ?>
                     <?php if (get_field('статьи_о', $term) == ''): ?>
                         СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ 
@@ -57,7 +57,7 @@ global $post;?>
                 <?php foreach ($posts as $post): ?>
                     <?php setup_postdata($post); ?>
                     <div class="article-item display_grid">
-                        <div class="article-item__img position_relative">
+                        <div class="article-item__img position_relative display_none--425px">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail(); ?>
                             </a>

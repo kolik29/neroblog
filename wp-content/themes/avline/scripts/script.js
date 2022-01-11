@@ -48,4 +48,27 @@ $(() => {
         $('#menu-slide-bg').fadeOut();
         $('#menu-slide').removeClass('active');
     })
+
+    $('blockquote').each(function() {
+        $(this).addClass($(this).find('div[data-quoute-class]').data('quoute-class'));
+    })
+
+    $('ul.menu a:contains("Статьи")').after($('<ul>', {
+        class: 'sub-menu'
+    }).append($('.js-categories-list').html()))
+
+    $('#js-gdpr_accept').on('click', function() {
+        $('#js-gdpr').addClass('display_none');
+        document.cookie = "gdpr=close"
+    })
+
+    if (getCookie('gdpr') == undefined)
+        $('#js-gdpr').removeClass('display_none');
 })
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}

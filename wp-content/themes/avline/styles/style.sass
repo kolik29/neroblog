@@ -6,6 +6,10 @@ $color_sienna: #98764b
 .text-transform
     &_initial
         text-transform: initial
+
+.white-space
+    &_nowrap
+        white-space: nowrap
     
 .display    
     &_grid
@@ -111,6 +115,12 @@ $color_sienna: #98764b
     &_23px
         line-height: 23px
 
+    &_23px
+        line-height: 23px
+
+    &_1_44
+        line-height: 1.44
+
 .margin
     &_0
         margin: 0
@@ -137,6 +147,20 @@ $color_sienna: #98764b
         &_30px
             margin-top: 30px !important
 
+        &_1_5em
+            margin-top: 1.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1.5em !important
+
+        &_4_5em
+            margin-top: 4.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 4.5em !important
+
         &_1em
             margin-top: 1em !important
 
@@ -144,14 +168,42 @@ $color_sienna: #98764b
                 &--425px
                     margin-top: 1em !important
 
+        &_1_75em
+            margin-top: 1.75em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1.75em !important
+
         &_2em
             margin-top: 2em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 2em !important
+
+        &_3em
+            margin-top: 3em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 3em !important
 
         &_075em
             margin-top: 0.75em !important
 
         &_40px
             margin-top: 40px
+
+        &_50px
+            margin-top: 50px
+
+        &_60px
+            margin-top: 60px
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 60px
 
         &_68px
             margin-top: 68px
@@ -174,8 +226,21 @@ $color_sienna: #98764b
                     margin-top: 0 !important
 
     &-bottom
+        &_-1px
+            margin-bottom: -1px
+
         &_120px
             margin-bottom: 120px !important
+        
+        &_150px
+            margin-bottom: 150px !important
+            
+        &_60px
+            margin-bottom: 60px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 60px !important
             
         &_40px
             margin-bottom: 40px !important
@@ -183,6 +248,9 @@ $color_sienna: #98764b
         &_30px
             margin-bottom: 30px !important
         
+        &_16px
+            margin-bottom: 16px
+
         &_10px
             margin-bottom: 10px
 
@@ -193,6 +261,13 @@ $color_sienna: #98764b
                 &--425px
                     margin-bottom: 1em
 
+        &_1_5em
+            margin-bottom: 1.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 1.5em !important
+
         &_05em
             @media screen and (max-width: 425px)
                 &--425px
@@ -200,6 +275,24 @@ $color_sienna: #98764b
 
         &_2em
             margin-bottom: 2em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 2em
+
+        &_3em
+            margin-bottom: 3em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 3em !important
+
+        &_4em
+            margin-bottom: 4em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 4em !important
 
     &-y
         &_25px
@@ -222,11 +315,23 @@ $color_sienna: #98764b
     &_translateX_50
         transform: translateX(50%)
 
+    &_translateY_1px
+        transform: translateY(1px)
+
 .padding
     &_0
         padding: 0
 
     &-top
+        &_1em
+            padding-top: 1em !important
+        
+        &_2em
+            padding-top: 2em !important
+
+        &_8px
+            padding-top: 8px !important
+
         &_15px
             padding-top: 15px !important
         
@@ -239,8 +344,18 @@ $color_sienna: #98764b
         &_30px
             padding-top: 30px !important
 
+        &_35px
+            padding-top: 35px !important
+
         &_60px
             padding-top: 60px !important
+
+        &_70px
+            padding-top: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 70px !important
 
         &_105px
             padding-top: 105px !important
@@ -251,7 +366,34 @@ $color_sienna: #98764b
         &_120px
             padding-top: 120px !important
 
+        &_70px
+            padding-top: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 70px !important
+
+        &_56px
+            padding-top: 56px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 56px !important
+
+        &_0
+            padding-top: 0 !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 0 !important
+
     &-bottom
+        &_2em
+            padding-bottom: 2em !important
+        
+        &_3em
+            padding-bottom: 3em !important
+
         &_14px
             padding-bottom: 14px !important
 
@@ -261,11 +403,35 @@ $color_sienna: #98764b
         &_40px
             padding-bottom: 40px !important
 
+        &_55px
+            padding-bottom: 55px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 55px !important
+
         &_60px
             padding-bottom: 60px !important
 
+        &_90px
+            padding-bottom: 90px !important
+
         &_110px
             padding-bottom: 110px !important
+
+        &_10px
+            padding-bottom: 10px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 10px !important
+
+        &_70px
+            padding-bottom: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 70px !important
 
 .font
     &-color
@@ -295,6 +461,9 @@ $color_sienna: #98764b
     &-weight
         &_200
             font-weight: 200
+
+        &_300
+            font-weight: 300
 
         &_400
             font-weight: 400
@@ -378,14 +547,14 @@ $color_sienna: #98764b
     max-width: 1160px
     width: calc(100% - 20px)
 
-    @media screen and (min-width: 1200px)
+    @media screen and (max-width: 1200px)
         padding-left: 0
         padding-right: 0
 
-    @media screen and (min-width: 425px)
-        padding-left: 30px
-        padding-right: 30px
-        width: calc(100% - 60px)
+    @media screen and (max-width: 425px)
+        padding-left: 60px
+        padding-right: 60px
+        width: calc(100vw - 120px)
 
 .button
     display: inline-block
@@ -393,6 +562,7 @@ $color_sienna: #98764b
     @extend .font-family_cuprum
     text-transform: uppercase
     transition: .3s
+    cursor: pointer
 
     &__border
         border-width: 1px
@@ -438,14 +608,29 @@ $color_sienna: #98764b
             &--768px
                 width: 100%
 
-    &_50
-        width: 50%
-
     &_65
         width: 65%
 
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 65%
+
+    &_50
+        width: 50%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 50%
+
     &_40
         width: 40%
+
+    &_35
+        width: 35%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 35%
         
 .height
     &_100
@@ -666,7 +851,7 @@ footer
                     font-size: 13px
                     font-weight: 300
                     color: #d6d6d6
-                    line-height: 1.55
+                    line-height: 1.45
 
                 @media screen and (max-width: 768px)
                     text-align: center
@@ -715,7 +900,7 @@ footer
             font-size: 12px
             color: #6e6e6e
             font-weight: 400
-            line-height: 1.55
+            line-height: 1.45
 
             a
                 color: #999
@@ -846,7 +1031,6 @@ main
                 font-size: 22px
                 margin-bottom: 10px
                 padding-bottom: 10px
-                border-bottom: 2px solid #98764b
 
     &_articles
         padding-top: 50px
@@ -892,6 +1076,7 @@ main
                             grid-template-columns: 1fr
                             grid-template-rows: auto auto
                             row-gap: 20px
+                            padding-bottom: 0
 
                         &:not(:last-child)
                             border-bottom: 1px solid #0d0e0e4d
@@ -952,6 +1137,7 @@ main
 
                                 @media screen and (max-width: 425px)
                                     font-size: 22px
+                                    margin-top: 5px
 
                             a
                                 text-decoration: none
@@ -1129,6 +1315,12 @@ main
                             background-color: $color_sienna
                             margin-bottom: 5px
                             transform: scaleX(-1)
+
+                    &--black
+                        border-color: #000
+
+                        &:before
+                            background-color: #d8d8d8
 
             &-text
                 @extend .font-family_roboto
@@ -1353,6 +1545,11 @@ header
             div
                 background-color: #fff !important
 
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #269fdd
+
+
     &--whatsapp
         &:hover
             color: #fff
@@ -1360,6 +1557,10 @@ header
 
             div
                 background-color: #fff
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #35d151
 
     &--viber
         &:hover
@@ -1369,6 +1570,10 @@ header
             div
                 background-color: #fff
 
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #794a98
+
     &--youtube
         &:hover
             color: #fff
@@ -1376,6 +1581,22 @@ header
 
             div
                 background-color: #fff !important
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #f20000
+
+    &--facebook
+        &:hover
+            color: #fff
+            background-color: #3f62a9
+
+            div
+                background-color: #fff !important
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #3f62a9
 
 #scroll_top
     height: calc(100vh - 75px)
@@ -1420,7 +1641,7 @@ header
 
 .repeater
     .tn-atom
-        line-height: 1.55
+        line-height: 1.45
 
     .repeater
         &-title
@@ -1430,15 +1651,21 @@ header
             font-weight: 500
             margin-top: 68px
 
+            @media screen and (max-width: 425px)
+                font-size: 22px
+                line-height: 26px
+                margin-top: 90px
+
         &-number
-            font-size: 450px
+            font-size: 380px
             color: #f6f3ef
             @extend .font-family_roboto
             position: absolute
             z-index: -1
             line-height: 240px
-            margin-left: -75px
-            margin-top: 30px
+            margin-left: -40px
+            margin-top: 20px
+            font-weight: 500
 
             @media screen and (max-width: 425px)
                 margin-left: 0
@@ -1447,6 +1674,12 @@ header
                 font-size: 350px
                 font-weight: 500
                 margin-top: 0
+
+            &--no-title
+                margin-top: 68px
+
+                @media screen and (max-width: 425px)
+                    margin-top: 90px
 
     &_1
         position: relative
@@ -1457,23 +1690,31 @@ header
             margin: 0 !important
             align-items: start !important
 
+            @media screen and (max-width: 425px)
+                margin-top: 1.5em !important
+
         .repeater-text
             grid-template-columns: 1fr 1fr
 
+            div:nth-child(2) 
+                > p,
+                > blockquote
+                    padding-left: 55px !important
+
+                    @media screen and (max-width: 425px)
+                        padding-left: 0 !important
+
+                > blockquote:before
+                    left: 0 !important
+
             @media screen and (max-width: 425px)
                 grid-template-columns: 1fr
-                row-gap: 1.5em
-
-                blockquote
-                    padding-left: 0 !important
-
-                    &:before
-                        left: 0 !important
+                row-gap: 2em
 
     &_2
         position: relative
         @extend .font-family_roboto
-        line-height: 1.55
+        line-height: 1.45
 
         .repeater
             &-number
@@ -1490,6 +1731,11 @@ header
 
                 @media screen and (max-width: 425px)
                     transform: translateX(0)
+
+    
+
+            @media screen and (max-width: 425px)
+                margin-top: 1.5em
 
 .element-background
     color: #fff
@@ -1518,7 +1764,7 @@ article
         font-weight: 400
 
         @media screen and (max-width: 425px)
-            font-size: 24px
+            font-size: 22px
 
         &.has-background
             position: relative
@@ -1665,6 +1911,9 @@ article
     .repeater_2
         margin-bottom: 10px !important
 
+        @media screen and (max-width: 425px)
+            margin-bottom: 25px !important
+
 .article-quote
     img
         margin-right: 30px
@@ -1689,6 +1938,11 @@ article
             &:last-child
                 flex-basis: 80% !important
 
+            @media screen and (max-width: 425px)
+                &:first-child,
+                &:last-child
+                    flex-basis: 100% !important
+
     &_27-73
         .wp-block-column
             &:first-child
@@ -1704,6 +1958,11 @@ article
 
             &:last-child
                 flex-basis: 72% !important
+
+            @media screen and (max-width: 425px)
+                &:first-child,
+                &:last-child
+                    flex-basis: 100% !important
 
     &_8-92
         .wp-block-column
@@ -1747,6 +2006,7 @@ article
             left: 50%
             transform: translateX(-50%)
             z-index: 10
+            top: unset
 
         &:after
             content: ''
@@ -2048,7 +2308,7 @@ article
 
 .menu-slide-icon
     position: relative
-    height: 1em
+    height: 10px
     width: 50px
 
     &:after,
@@ -2130,8 +2390,22 @@ article
                     &:hover
                         color: #98764b
 
+                ul
+                    list-style: none
+                    margin-top: 8px
+                    padding-inline-start: 0px
+
+                    li
+                        margin-bottom: 8px
+                        white-space: initial
+
+                    a
+                        font-size: 18px !important
+
         &-social
-            display: flex
+            display: grid
+            grid-template-columns: 1fr
+            row-gap: 10px
 
             &-icon
                 width: 30px
@@ -2161,7 +2435,76 @@ article
                 &--telegram:after
                     mask-image: url('../img/social/telegram_filled.png')
 
-    
+            a
+                display: block
+                padding: 11px 0 13px
+                font-size: 16px
 
     &.active
         transform: translateX(0)
+
+blockquote.bg-whitesmoke
+    position: relative
+
+    &:before
+        content: ''
+        left: 50%
+        transform: translateX(-50%)
+        height: calc(100% + 80px)
+        position: absolute
+        background-color: #f8f8f8
+        width: 100vw
+        z-index: -1
+
+    &.margin-bottom_150px
+        &:before
+            height: calc(100% + 190px)
+
+            @media screen and (max-width: 425px)
+                height: calc(100% + 165px)
+
+h1.has-background
+    font-size: 24px !important
+
+p
+    img
+        width: 100%
+
+.policy-link
+    transition: .3s
+    text-decoration: underline !important
+    
+    &:hover
+        color: $color_sienna
+
+.gdpr
+    min-height: 70px
+    padding: 10px
+    text-align: center
+    grid-template-columns: 1fr 20%
+    position: fixed
+    bottom: 0
+    background-color: #fff
+    z-index: 9999
+    width: 100%
+    box-shadow: 0 8px 31px 0 #bababa, 0 2px 14px 0 #c2c2c2
+    @extend .font-family_roboto
+    gap: 10px
+
+    @media screen and (max-width: 425px)
+        grid-template-columns: 1fr
+        padding: 20px 10px 10px 10px
+
+    p
+        font-size: 12px
+        line-height: 19px
+
+        a
+            color: #000
+            transition: .3s
+
+            &:hover
+                color: $color_sienna
+
+    .button
+        padding: 10px 45px

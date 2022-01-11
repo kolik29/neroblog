@@ -54,7 +54,7 @@
                 <?php if ($telegram != ''): ?>
                     <a href="<?=$telegram?>" class="social-icons__link social-icons__link--telegram"></a>
                 <?php endif; ?>
-                <span class="font-family_roboto font-size_16px width_40 font-align_center">
+                <span class="font-family_roboto font-size_16px width_40 font-align_center white-space_nowrap">
                     — Задать вопрос
                 </span>
             </div>

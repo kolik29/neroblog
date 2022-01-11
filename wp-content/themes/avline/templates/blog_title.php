@@ -18,7 +18,7 @@ Template Name: Blog title
                 <?=get_field('подзаголовок', $main_page_id)?>
             </h2>
         </div>
-        <div class="blog-title__menu display_flex justify-content_center position_relative">
+        <div class="blog-title__menu display_flex justify-content_center position_relative display_none--425px">
             <?php get_template_partial('blog_menu'); ?>
         </div>
 

@@ -13,7 +13,7 @@ Template Name: Главная страница
         <div class="space"></div>
         <section class="display_flex justify-content_center">
             <div class="wrapper">
-                <div class="blog-title__menu display_flex justify-content_center position_relative">
+                <div class="blog-title__menu display_flex justify-content_center position_relative display_none--425px">
                     <?php get_template_partial('blog_menu'); ?>
                 </div>
             </div>

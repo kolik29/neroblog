@@ -43,7 +43,7 @@ global $post;?>
                 <?php foreach ($posts as $post): ?>
                     <?php setup_postdata($post); ?>
                     <div class="article-item display_grid">
-                        <div class="article-item__img position_relative">
+                        <div class="article-item__img position_relative display_none--425px">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail(); ?>
                             </a>

@@ -85,9 +85,9 @@
                     Использовать материалы сайта запрещено
                 </div>
                 <div>
-                    <!-- <a href="#">
+                    <a href="/policy" class="policy-link">
                         Политики конфиденциальности и соглашения
-                    </a> -->
+                    </a>
                 </div>
             </div>
         </div>
@@ -134,6 +134,30 @@
     <div id="menu-slide">
         <div class="menu-list">
             <div class="menu-list-close js-hide-menu-slide"></div>
+
+            <div class="display_none js-categories-list">
+                <?php
+                    $categories_list = get_categories();
+                    
+                    $category = get_category(get_query_var('cat'));
+
+                    $cat_ID = 0;
+
+                    if (property_exists($category, 'cat_ID'))
+                        $cat_ID = $category->cat_ID;
+                ?>
+
+                <?php foreach ($categories_list as $categorie): ?>
+                    <?php if ($categorie->name != 'Блог'): ?>
+                        <li>
+                            <a href="<?=get_category_link($categorie->cat_ID)?>" <?php if ($cat_ID == $categorie->cat_ID): ?> class="active"<?php endif; ?>>
+                                <?=$categorie->name ?>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+
             <?php wp_nav_menu([
                 'menu' => 22,
                 'container' => false
@@ -142,17 +166,28 @@
             <div class="menu-social">
                 <?php $facebook = get_option('facebook'); ?>
                 <?php if ($facebook != ''): ?>
-                    <a href="<?=$facebook?>" class="menu-social-icon menu-social-icon--facebook"></a>
+                    <a class="button button__border button__white font-align_center social-bg--facebook" href="<?=$facebook?>">facebook</a>
                 <?php endif; ?>
                 <?php $youtube = get_option('youtube'); ?>
                 <?php if ($youtube != ''): ?>
-                    <a href="<?=$youtube?>" class="menu-social-icon menu-social-icon--youtube"></a>
+                    <a class="button button__border button__white font-align_center social-bg--youtube" href="<?=$youtube?>">youtube</a>
                 <?php endif; ?>
                 <?php $telegram = get_option('telegram'); ?>
                 <?php if ($telegram != ''): ?>
-                    <a href="<?=$telegram?>" class="menu-social-icon menu-social-icon--telegram"></a>
+                    <a class="button button__border button__white font-align_center social-bg--telegram" href="<?=$telegram?>">telegram</a>
                 <?php endif; ?>
             </div>
+        </div>
+    </div>
+
+    <div class="gdpr display_grid display_none" id="js-gdpr">
+        <div class="display_flex align-items_center justify-content_center">
+            <?=get_field('текст_плашки_политики', 5)?>
+        </div>
+        <div class="display_flex align-items_center justify-content_center">
+            <span href="" class="button button__border button__sienna cursor_pointer" id="js-gdpr_accept">
+                <?=get_field('кнопки_плашки_политики', 5)?>
+            </span>
         </div>
     </div>
 </body>
