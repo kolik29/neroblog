@@ -13,7 +13,7 @@
     ?>
 
     <li>
-        <a href="/blog"<?php if ($cat_ID == 13): ?> class="active"<?php endif; ?>>
+        <a href="/blog/"<?php if ($cat_ID == 13): ?> class="active"<?php endif; ?>>
             Все статьи
         </a>
     </li>

@@ -691,7 +691,7 @@ ul.menu
 p
     margin: 0
 
-h1, h2
+h1, h2, .h1, .h2
     @extend .font-family_cuprum
     @extend .margin_0
     @extend .padding_0
@@ -762,9 +762,6 @@ header
 
                 @media screen and (max-width: 425px)
                     display: none
-
-            &:hover
-                transform: translate(0, 3px) scale(1.1, 1.1)
     
         .menu
             grid-template-columns: auto auto
@@ -835,11 +832,7 @@ footer
                     margin-bottom: 10px
                     transition: .3s
 
-                    &:hover
-                        transform: translateX(-6px) scale(1.1)
-                        background-color: $color_sienna
-
-                h2
+                .h2, h2
                     font-size: 20px
                     font-weight: 400
 
@@ -866,7 +859,7 @@ footer
                 @media screen and (max-width: 425px)
                     grid-template-columns: 1fr
 
-                h2
+                .h2, h2
                     font-size: 20px
                     margin-bottom: 18px
 
@@ -1049,7 +1042,7 @@ main
                 @media screen and (max-width: 425px)
                     margin-bottom: 0
 
-                h1
+                h1, .h1
                     border-bottom: 3px solid $color_sienna
                     font-weight: 400
                     padding-bottom: 13px
@@ -1124,7 +1117,7 @@ main
                             h1
                                 text-transform: uppercase
 
-                            h1
+                            h1, .h1
                                 font-size: 28px
                                 margin-top: 22px
                                 margin-bottom: 15px
@@ -2508,3 +2501,64 @@ p
 
     .button
         padding: 10px 45px
+
+.page-nav
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    margin-bottom: 60px
+
+    @media screen and (max-width: 425px)
+        margin-bottom: 20px
+
+    a, span
+        padding: 15px
+        display: block
+        font-size: 24px
+        margin: 0 5px
+        text-align: center
+
+        @media screen and (max-width: 425px)
+            font-size: 15px
+            padding: 10px
+
+        &:first-child
+            margin-left: 0
+
+        &:last-child
+            margin-right: 0
+
+        &.prev,
+        &.next
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &:after
+                content: ''
+                position: absolute
+                mask-image: url('../img/next.png')
+                mask-size: cover
+                mask-position: center
+                background-color: $color_sienna
+                width: 1em
+                height: 1em
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+        &.prev::after
+            transform: translate(-50%, -50%) rotate(180deg)
+
+        &:hover:after
+            background-color: #fff
+
+        &.current
+            background-color: #333 !important
+            color: #fff
+            border: unset
+            cursor: default
+
+            &:hover
+                background-color: #333 !important
+                color: #fff

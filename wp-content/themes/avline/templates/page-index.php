@@ -19,7 +19,7 @@ Template Name: Главная страница
             </div>
         </section>
     <?php endif; ?>
-    <?php get_template_partial('blog_articles'); ?>
+    <?php get_template_partial('blog_articles', ['show_paginations' => !is_front_page()]); ?>
 </main>
 
 <?php get_footer(); ?>

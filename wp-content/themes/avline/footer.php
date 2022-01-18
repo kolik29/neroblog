@@ -1,15 +1,15 @@
     <footer class="display_flex justify-content_center flex-direction_column align-items_center">
         <div class="footer-content display_grid wrapper">
             <div class="footer-content__copyright display_flex--768px flex-direction_column--768px justify-content_center--768px align-items_center--768px font-align_center--768px">
-                <a href="/">
+                <span href="/">
                     <div href="/" class="logo" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
-                </a>
-                <h2>
-                    <a href="/">
+                </span>
+                <div class="h2">
+                    <span href="/">
                         МАРКЕТИНГ<br>
                         ВЕРЕТЕННИКОВА 
-                    </a>
-                </h2>
+                    </span>
+                </div>
                 <p class="font-family_roboto margin-top_1em">
                     Создание результативных <br>
                     сайтов: от позиционирования <br>
@@ -18,15 +18,36 @@
             </div>
             <div class="footer-content__menu display_grid">
                 <div class="display_flex align-items_center--425px flex-direction_column font-align_center--425px">
-                    <h2>МОИ УСЛУГИ</h2>
+                    <div class="h2">МОИ УСЛУГИ</div>
                     <div class="font-family_roboto font-weight_200">
-                        <?php wp_nav_menu([
-                            'menu' => 9,
-                        ]); ?>
+                        <div class="menu-">
+                            <ul class="menu">
+                                <?php
+                                    $categories_list = get_categories();
+                                    
+                                    $category = get_category(get_query_var('cat'));
+
+                                    $cat_ID = 0;
+
+                                    if (property_exists($category, 'cat_ID'))
+                                        $cat_ID = $category->cat_ID;
+                                ?>
+
+                                <?php foreach ($categories_list as $categorie): ?>
+                                    <?php if ($categorie->name != 'Блог'): ?>
+                                        <li>
+                                            <a href="<?=get_category_link($categorie->cat_ID)?>" <?php if ($cat_ID == $categorie->cat_ID): ?> class="active"<?php endif; ?>>
+                                                <?=$categorie->name ?>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="display_flex align-items_center--425px flex-direction_column font-align_center--425px margin-top_1em--425px">
-                    <h2>КОНТАКТЫ</h2>
+                    <div class="h2">КОНТАКТЫ</div>
                     <menu class="font-family_roboto font-weight_200">
                         <li>
                             <?php $email = get_option('email'); ?>
@@ -59,7 +80,7 @@
                     </div>
                 </div>
                 <div class="display_flex align-items_center--425px flex-direction_column font-align_center--425px margin-top_1em--425px">
-                    <h2 class="font-family_cuprum margin_0">ПОДПИШИТЕСЬ</h2>
+                    <div class="h2 font-family_cuprum margin_0">ПОДПИШИТЕСЬ</div>
                     <div class="subscribe display_grid">
                         <?php $telegram = get_option('telegram'); ?>
                         <?php if ($telegram != ''): ?>
@@ -190,5 +211,25 @@
             </span>
         </div>
     </div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(87121272, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true,
+                trackHash:true,
+                ecommerce:"dataLayer"
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/87121272" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    
 </body>
 </html>

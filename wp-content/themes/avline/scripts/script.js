@@ -1,15 +1,19 @@
 $(() => {
     $('body').on('click', '.js-load_more_posts', function() {
-        console.log($('.articles-list .article-item').length)
 		$.post( '/wp-admin/admin-ajax.php', {
 			action: 'jq_get_posts',
 			offset: $('.articles-list .article-item').length,
             post_per_page: $(this).data('count'),
             cat_ID: $(this).data('cat-id'),
+            show_paginations: $(this).data('show-paginations'),
 		}, (response) => {
             response = JSON.parse(response);
+
+            history.pushState(null, null, '?PAGE=' + (parseInt($(this).data('offset') / $(this).data('count')) + 2));
+            
             if (response.page) {
                 $(this).closest('.article-load').remove();
+                $('.js-page-nav').remove();
                 $('.articles-list').append($(response.page).find('.articles-list').html());
             }
 		});

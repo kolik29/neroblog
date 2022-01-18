@@ -133,7 +133,7 @@
   line-height: 1.44;
 }
 
-.margin_0, #blog_articles .articles-list .article-item__content-subject ul, body, h1, h2, menu,
+.margin_0, #blog_articles .articles-list .article-item__content-subject ul, body, h1, h2, .h1, .h2, menu,
 ul.menu {
   margin: 0;
 }
@@ -339,7 +339,7 @@ ul.menu {
   transform: translateY(1px);
 }
 
-.padding_0, #blog_articles .articles-list .article-item__content-subject ul, h1, h2, menu li,
+.padding_0, #blog_articles .articles-list .article-item__content-subject ul, h1, h2, .h1, .h2, menu li,
 ul.menu li, menu,
 ul.menu {
   padding: 0;
@@ -470,7 +470,7 @@ ul.menu {
 .font-color_white, .button--active, .button__white, .button__sienna:hover, .wp-block-button__link:hover {
   color: #fff;
 }
-.font-family_cuprum, #menu-slide .menu-list .menu li, .repeater .repeater-title, h1, h2, .button, .wp-block-button__link, header nav .menu .menu a {
+.font-family_cuprum, #menu-slide .menu-list .menu li, .repeater .repeater-title, h1, h2, .h1, .h2, .button, .wp-block-button__link, header nav .menu .menu a {
   font-family: "Cuprum";
 }
 .font-family_roboto, .gdpr, article p, article div, .repeater_2, .repeater .repeater-number, #scroll_top .text, .breadcrumbs, #blog_article .article-text, #blog_article .article-preview, #blog_article .article-author, #blog_articles .articles-list .article-item__content p, #blog_title .blog-title__content p {
@@ -803,9 +803,6 @@ header nav .logo__cat {
     display: none;
   }
 }
-header nav .logo:hover {
-  transform: translate(0, 3px) scale(1.1, 1.1);
-}
 header nav .menu {
   grid-template-columns: auto auto;
   -moz-column-gap: 10px;
@@ -880,15 +877,11 @@ footer .footer-content__copyright .logo {
   margin-bottom: 10px;
   transition: 0.3s;
 }
-footer .footer-content__copyright .logo:hover {
-  transform: translateX(-6px) scale(1.1);
-  background-color: #98764b;
-}
-footer .footer-content__copyright h2 {
+footer .footer-content__copyright .h2, footer .footer-content__copyright h2 {
   font-size: 20px;
   font-weight: 400;
 }
-footer .footer-content__copyright h2 a {
+footer .footer-content__copyright .h2 a, footer .footer-content__copyright h2 a {
   color: #fff;
   text-decoration: unset;
 }
@@ -896,7 +889,7 @@ footer .footer-content__copyright p {
   font-size: 13px;
   font-weight: 300;
   color: #d6d6d6;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 @media screen and (max-width: 768px) {
   footer .footer-content__copyright {
@@ -919,7 +912,7 @@ footer .footer-content__menu {
     grid-template-columns: 1fr;
   }
 }
-footer .footer-content__menu h2 {
+footer .footer-content__menu .h2, footer .footer-content__menu h2 {
   font-size: 20px;
   margin-bottom: 18px;
 }
@@ -952,7 +945,7 @@ footer .footer-bottom {
   font-size: 12px;
   color: #6e6e6e;
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 footer .footer-bottom a {
   color: #999;
@@ -1120,13 +1113,13 @@ main > .space {
     margin-bottom: 0;
   }
 }
-#blog_articles .articles-title h1 {
+#blog_articles .articles-title h1, #blog_articles .articles-title .h1 {
   border-bottom: 3px solid #98764b;
   font-weight: 400;
   padding-bottom: 13px;
 }
 @media screen and (max-width: 425px) {
-  #blog_articles .articles-title h1 {
+  #blog_articles .articles-title h1, #blog_articles .articles-title .h1 {
     padding-bottom: 6px;
   }
 }
@@ -1197,7 +1190,7 @@ main > .space {
 #blog_articles .articles-list .article-item__content h1 {
   text-transform: uppercase;
 }
-#blog_articles .articles-list .article-item__content h1 {
+#blog_articles .articles-list .article-item__content h1, #blog_articles .articles-list .article-item__content .h1 {
   font-size: 28px;
   margin-top: 22px;
   margin-bottom: 15px;
@@ -1205,11 +1198,11 @@ main > .space {
   transition: 0.3s;
   font-weight: 400;
 }
-#blog_articles .articles-list .article-item__content h1:hover {
+#blog_articles .articles-list .article-item__content h1:hover, #blog_articles .articles-list .article-item__content .h1:hover {
   color: #98764b;
 }
 @media screen and (max-width: 425px) {
-  #blog_articles .articles-list .article-item__content h1 {
+  #blog_articles .articles-list .article-item__content h1, #blog_articles .articles-list .article-item__content .h1 {
     font-size: 22px;
     margin-top: 5px;
   }
@@ -1754,7 +1747,7 @@ header .menu {
 }
 
 .repeater .tn-atom {
-  line-height: 1.55;
+  line-height: 1.45;
 }
 .repeater .repeater-title {
   font-size: 28px;
@@ -1835,7 +1828,7 @@ header .menu {
 }
 .repeater_2 {
   position: relative;
-  line-height: 1.55;
+  line-height: 1.45;
 }
 .repeater_2 .repeater-number {
   font-weight: 700;
@@ -2661,4 +2654,72 @@ p img {
 }
 .gdpr .button, .gdpr header nav .menu .menu a, header nav .menu .menu .gdpr a, .gdpr .wp-block-button__link {
   padding: 10px 45px;
+}
+
+.page-nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 425px) {
+  .page-nav {
+    margin-bottom: 20px;
+  }
+}
+.page-nav a, .page-nav span {
+  padding: 15px;
+  display: block;
+  font-size: 24px;
+  margin: 0 5px;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  .page-nav a, .page-nav span {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+.page-nav a:first-child, .page-nav span:first-child {
+  margin-left: 0;
+}
+.page-nav a:last-child, .page-nav span:last-child {
+  margin-right: 0;
+}
+.page-nav a.prev, .page-nav a.next, .page-nav span.prev, .page-nav span.next {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-nav a.prev:after, .page-nav a.next:after, .page-nav span.prev:after, .page-nav span.next:after {
+  content: "";
+  position: absolute;
+  -webkit-mask-image: url("../img/next.png");
+          mask-image: url("../img/next.png");
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: #98764b;
+  width: 1em;
+  height: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.page-nav a.prev::after, .page-nav span.prev::after {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+.page-nav a:hover:after, .page-nav span:hover:after {
+  background-color: #fff;
+}
+.page-nav a.current, .page-nav span.current {
+  background-color: #333 !important;
+  color: #fff;
+  border: unset;
+  cursor: default;
+}
+.page-nav a.current:hover, .page-nav span.current:hover {
+  background-color: #333 !important;
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQ2FLT2');</script>
+    <!-- End Google Tag Manager -->
+
+
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <?php wp_head(); ?>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ2FLT2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <?php wp_body_open(); ?>
     <header class="display_flex justify-content_center position_fixed width_100 flex-direction_column align-items_center">
         <nav class="display_flex align-items_center justify-content_space-between wrapper">
-            <a href="/" class="logo display_grid">
+            <span class="logo display_grid">
                 <img src="<?=get_template_directory_uri();?>/img/logo_brown.svg" alt="">
                 <div class="logo__cat" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
-            </a>
+            </span>
             <div class="menu display_grid align-items_center display_none--768px">
                 <?php $telegram = get_option('telegram'); ?>
                 <?php if ($telegram != ''): ?>
