@@ -8,21 +8,21 @@ Template Name: Blog title
 <?php $post = get_post($main_page_id); ?>
 <?php setup_postdata($post); ?>
 
-<section id="blog_title" class="min-height_100vh display_flex justify-content_center">
+<section id="blog_title" class="min-height_100vh min-height_unset--425px display_flex justify-content_center">
     <div class="wrapper">
         <div class="display_flex justify-content_center flex-direction_column font-align_center">
-            <h1 class="font-size_46px font-size_35px--768px">
-                <?=get_the_title($post)?>
+            <h1 class="font-size_46px font-size_37px--425px font-align_left--425px">
+                <?=get_field('заголовок', $main_page_id)?>
             </h1>
-            <h2>
+            <h2 class="font-align_left--425px">
                 <?=get_field('подзаголовок', $main_page_id)?>
             </h2>
         </div>
-        <div class="blog-title__menu display_flex justify-content_center position_relative">
+        <div class="blog-title__menu display_flex justify-content_center position_relative display_none--425px">
             <?php get_template_partial('blog_menu'); ?>
         </div>
 
-        <div class="blog-title__content">
+        <div class="blog-title__content display_none--425px">
             <?php the_content(); ?>
         </div>
     </div>

@@ -36,14 +36,14 @@ global $post;?>
         <div class="wrapper">
             <div class="articles-title">
                 <h1 class="font-transform_uppercase">
-                    МОи Статьи НА ТЕМУ <?=get_cat_name($cat_ID);?>
+                    Статьи НА ТЕМУ <?=get_cat_name($cat_ID);?>
                 </h1>
             </div>
             <div class="articles-list">
                 <?php foreach ($posts as $post): ?>
                     <?php setup_postdata($post); ?>
                     <div class="article-item display_grid">
-                        <div class="article-item__img position_relative">
+                        <div class="article-item__img position_relative display_none--425px">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail(); ?>
                             </a>
@@ -52,12 +52,12 @@ global $post;?>
                             <div class="article-item__content-subject font-family_cuprum">
                                 <?php the_category(); ?>
                             </div>
-                            <h1>
-                                <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <h1>
                                     <?php the_title(); ?>
-                                </a>
-                            </h1>
-                            <?php the_excerpt(); ?>
+                                </h1>
+                                <?php the_excerpt(); ?>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>

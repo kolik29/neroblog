@@ -12,7 +12,7 @@
             'exclude' => get_the_ID()
         ]); ?>
 
-        <section id="blog_post_menu" class="display_flex justify-content_center">
+        <section id="blog_post_menu" class="display_flex justify-content_center display_none--425px">
             <div class="wrapper">
                 <?php get_template_partial('blog_menu', [
                     'cat_ID' => $cat_ID

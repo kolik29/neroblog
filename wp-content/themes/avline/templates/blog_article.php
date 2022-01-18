@@ -12,19 +12,13 @@ Template Name: blog_article
 
         <article>
             <div class="article-head">
-                <h1 class="font-size_46px">
+                <h1 class="font-size_43px font-size_26px--425px">
                     <?php the_title() ?>
                 </h1>
+                <?php $firstName = get_the_author_meta('first_name') ?>
                 <div class="article-author display_grid justify-content_start">
-                    <span class="article-author__date"><?php the_date('d.m.Y') ?></span> <span class="article-author__name">Автор: <?php the_author() ?></span>
+                    <span class="article-author__date"><?php the_date('d.m.Y') ?></span> <span class="article-author__name">Автор: <?php echo substr($firstName, 0, 2) ?>. <?php the_author_meta('last_name') ?></span>
                 </div>
-            </div>
-
-            <div class="article-preview display_grid align-items_start">
-                <div class="article-preview__image">
-                    <?php the_post_thumbnail(); ?>
-                </div>
-                <?php the_excerpt(); ?>
             </div>
 
             <div class="article-body">

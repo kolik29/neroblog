@@ -17,24 +17,20 @@ body {
 .wp-block a {
   color: var(--wp--style--color--link, var(--global--color-primary));
 }
-
 .wp-block a:hover {
   -webkit-text-decoration-style: dotted;
           text-decoration-style: dotted;
 }
-
 .wp-block a:focus {
   outline: 2px solid var(--wp--style--color--link, var(--global--color-primary));
   text-decoration: none;
 }
 
-.has-background .has-link-color a,
-.has-background.has-link-color a {
+.has-background .has-link-color a, .has-background.has-link-color a {
   color: var(--wp--style--color--link, var(--global--color-primary));
 }
 
 button,
 a {
   cursor: pointer;
-}
-/*# sourceMappingURL=editor.css.map */
+}/*# sourceMappingURL=editor.css.map */

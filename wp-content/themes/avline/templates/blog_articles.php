@@ -1,13 +1,18 @@
 <?php
 $category = get_category(get_query_var('cat'));
 
-$post_per_page = 3;
+$post_per_page = 5;
 
 $cat_ID = 0;
 
 $exclude = [];
 
 $offset = 0;
+
+$current_page = 1;
+
+if (isset($_GET['PAGE']))
+    $current_page = $_GET['PAGE'];
 
 if (property_exists($category, 'cat_ID'))
     $cat_ID = $category->cat_ID;
@@ -23,6 +28,9 @@ if (array_key_exists('exclude', $parameters))
 
 if (array_key_exists('offset', $parameters))
     $offset = $parameters['offset'] ? $parameters['offset'] : $offset;
+
+if (isset($_GET['PAGE']))
+    $offset = $post_per_page * ($current_page - 1);
 ?>
 
 <?php $posts = get_posts([
@@ -40,20 +48,23 @@ global $post;?>
 <?php if (count($posts) > 0): ?>
     <section id="blog_articles" class="display_flex justify-content_center">
         <div class="wrapper">
-            <div class="articles-title">
-                <h1 class="font-size_46px font-size_35px--768px">
-                    СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ 
-                </h1>
-                <h2>
-                    Это нужно знать о сайтах, рекламе и разработчиках 
-                </h2>
+            <div class="articles-title display_flex--425px justify-content_center">
+                <div class="h1 font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
+                    <?php $term = get_queried_object(); ?>
+                    <?php if (get_field('статьи_о', $term) == ''): ?>
+                        СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ
+                    <?php else: ?>
+                        <?php
+                        echo 'Статьи о '.get_field('статьи_о', $term);
+                        ?>
+                    <?php endif; ?>
+                </div>
             </div>
             <div class="articles-list">
-
                 <?php foreach ($posts as $post): ?>
                     <?php setup_postdata($post); ?>
                     <div class="article-item display_grid">
-                        <div class="article-item__img position_relative">
+                        <div class="article-item__img position_relative display_none--425px">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail(); ?>
                             </a>
@@ -62,44 +73,24 @@ global $post;?>
                             <div class="article-item__content-subject font-family_cuprum">
                                 <?php the_category(); ?>
                             </div>
-                            <h1>
-                                <a href="<?php the_permalink(); ?>">
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="h1">
                                     <?php the_title(); ?>
-                                </a>
-                            </h1>
-                            <?php the_excerpt(); ?>
+                                </div>
+                                <?php the_excerpt(); ?>
+                            </a>
                         </div>
                     </div>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
 
-                <?php
-                $posts = get_posts([
-                    'numberposts' => -1,
-                    'category'    => $cat_ID,
-                    'orderby'     => 'date',
-                    'order'       => 'DESC',
-                    'exclude'     => $exclude,
-                    'post_type'   => 'post',
-                    'suppress_filters' => true,
-                ]);
-
-                $offset = $post_per_page;
-
-                if (array_key_exists('offset', $_POST))
-                    $offset = $_POST['offset'] ? $_POST['offset'] : $offset;
-                
-                ?>
-
-                <?php if (!array_key_exists('cat_ID', $parameters)): ?>
-                    <?php if (count($posts) > $post_per_page + $offset): ?>
-                    <div class="article-load display_flex justify-content_center">
-                        <button class="article-load__button button button__border button__sienna js-load_more_posts" data-count="5" data-cat-id="<?=$cat_ID?>">
-                            ЗАГРУЗИТЬ ЕЩЕ
-                        </button>
-                    </div>
-                    <?php endif; ?>
-                <?php endif; ?>
+                <?php get_template_partial('blog_load_more', [
+                    'cat_ID' => $cat_ID,
+                    'exclude' => $exclude,
+                    'post_per_page' => $post_per_page,
+                    'offset' => $offset,
+                    'show_paginations' => $parameters['show_paginations']
+                ]); ?>
             </div>
         </div>
     </section>

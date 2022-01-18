@@ -1,21 +1,17 @@
 $color_sienna: #98764b
 
+.line-height_unset
+    line-height: unset !important
+
 .text-transform
     &_initial
         text-transform: initial
-    
-.display
-    &_flex
-        display: flex
 
-        @media screen and (max-width: 425px)
-            &--425px
-                display: flex
-
-        @media screen and (max-width: 768px)
-            &--768px
-                display: flex
+.white-space
+    &_nowrap
+        white-space: nowrap
     
+.display    
     &_grid
         display: grid
 
@@ -29,6 +25,17 @@ $color_sienna: #98764b
         @media screen and (max-width: 768px)
             &--768px
                 display: none !important
+    
+    &_flex
+        display: flex
+
+        @media screen and (max-width: 425px)
+            &--425px
+                display: flex !important
+
+        @media screen and (max-width: 768px)
+            &--768px
+                display: flex
 
     &_block
         display: block !important
@@ -72,6 +79,9 @@ $color_sienna: #98764b
             &--425px
                 align-items: center
 
+    &_end
+        align-items: end
+
 .justify-content    
     &_space-between
         justify-content: space-between
@@ -93,17 +103,335 @@ $color_sienna: #98764b
             &--425px
                 justify-content: center
 
+.line-height
+    &_29px
+        line-height: 29px
+
+    &_22px
+        @media screen and (max-width: 768px)
+            &--425px
+                line-height: 22px
+
+    &_23px
+        line-height: 23px
+
+    &_23px
+        line-height: 23px
+
+    &_1_44
+        line-height: 1.44
+
 .margin
     &_0
         margin: 0
 
     &-top
+        &_3px
+            margin-top: 3px
+
+        &_10px
+            margin-top: 10px !important
+
+        &_20px
+            margin-top: 20px !important
+
+        &_21px
+            margin-top: 21px
+
+        &_22px
+            margin-top: 22px
+
         &_27px
             margin-top: 27px
+
+        &_30px
+            margin-top: 30px !important
+
+        &_1_5em
+            margin-top: 1.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1.5em !important
+
+        &_4_5em
+            margin-top: 4.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 4.5em !important
+
+        &_1em
+            margin-top: 1em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1em !important
+
+        &_1_75em
+            margin-top: 1.75em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 1.75em !important
+
+        &_2em
+            margin-top: 2em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 2em !important
+
+        &_3em
+            margin-top: 3em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 3em !important
+
+        &_075em
+            margin-top: 0.75em !important
+
+        &_40px
+            margin-top: 40px
+
+        &_50px
+            margin-top: 50px
+
+        &_60px
+            margin-top: 60px
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 60px
+
+        &_68px
+            margin-top: 68px
+
+        &_120px
+            margin-top: 120px !important
+
+        &_150px
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 150px
+
+        &_-2px
+            margin-top: -2px
+
+
+        &_0
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 0 !important
+
+    &-bottom
+        &_-1px
+            margin-bottom: -1px
+
+        &_120px
+            margin-bottom: 120px !important
+        
+        &_150px
+            margin-bottom: 150px !important
+            
+        &_60px
+            margin-bottom: 60px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 60px !important
+            
+        &_40px
+            margin-bottom: 40px !important
+
+        &_30px
+            margin-bottom: 30px !important
+        
+        &_16px
+            margin-bottom: 16px
+
+        &_10px
+            margin-bottom: 10px
+
+        &_1em
+            margin-bottom: 1em
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 1em
+
+        &_1_5em
+            margin-bottom: 1.5em !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 1.5em !important
+
+        &_05em
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 0.5em
+
+        &_2em
+            margin-bottom: 2em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 2em
+
+        &_3em
+            margin-bottom: 3em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 3em !important
+
+        &_4em
+            margin-bottom: 4em
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-bottom: 4em !important
+
+    &-y
+        &_25px
+            margin-top: 25px
+            margin-bottom: 25px
+
+    &-left
+        &_1em
+            margin-left: 1em !important
+
+        &_61px
+            margin-left: 61px !important
+
+        &_1px
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-left: 1px !important
+
+.transform
+    &_translateX_50
+        transform: translateX(50%)
+
+    &_translateY_1px
+        transform: translateY(1px)
 
 .padding
     &_0
         padding: 0
+
+    &-top
+        &_1em
+            padding-top: 1em !important
+        
+        &_2em
+            padding-top: 2em !important
+
+        &_8px
+            padding-top: 8px !important
+
+        &_15px
+            padding-top: 15px !important
+        
+        &_20px
+            padding-top: 20px !important
+        
+        &_25px
+            padding-top: 25px !important
+
+        &_30px
+            padding-top: 30px !important
+
+        &_35px
+            padding-top: 35px !important
+
+        &_60px
+            padding-top: 60px !important
+
+        &_70px
+            padding-top: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 70px !important
+
+        &_105px
+            padding-top: 105px !important
+
+        &_110px
+            padding-top: 110px !important
+
+        &_120px
+            padding-top: 120px !important
+
+        &_70px
+            padding-top: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 70px !important
+
+        &_56px
+            padding-top: 56px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 56px !important
+
+        &_0
+            padding-top: 0 !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-top: 0 !important
+
+    &-bottom
+        &_2em
+            padding-bottom: 2em !important
+        
+        &_3em
+            padding-bottom: 3em !important
+
+        &_14px
+            padding-bottom: 14px !important
+
+        &_30px
+            padding-bottom: 30px !important
+
+        &_40px
+            padding-bottom: 40px !important
+
+        &_55px
+            padding-bottom: 55px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 55px !important
+
+        &_60px
+            padding-bottom: 60px !important
+
+        &_90px
+            padding-bottom: 90px !important
+
+        &_110px
+            padding-bottom: 110px !important
+
+        &_10px
+            padding-bottom: 10px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 10px !important
+
+        &_70px
+            padding-bottom: 70px !important
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    padding-bottom: 70px !important
 
 .font
     &-color
@@ -123,6 +451,9 @@ $color_sienna: #98764b
         &_roboto
             font-family: 'Roboto'
 
+        &_oswald
+            font-family: 'Oswald'
+
     &-decoration
         &_none
             text-decoration: none
@@ -131,8 +462,20 @@ $color_sienna: #98764b
         &_200
             font-weight: 200
 
+        &_300
+            font-weight: 300
+
         &_400
             font-weight: 400
+
+        &_600
+            font-weight: 600
+
+        &_700
+            font-weight: 700
+
+        &_900
+            font-weight: 900
 
     &-align
         &_center
@@ -142,17 +485,57 @@ $color_sienna: #98764b
                 &--425px
                     text-align: center
 
+        &_left
+            text-align: left
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    text-align: left
+
     &-size
-        &_16px
-            font-size: 16px
-        
         &_46px
             font-size: 46px
+
+        &_44px
+            font-size: 44px
+
+        &_43px
+            font-size: 43px
+
+        &_37px
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 37px
 
         &_35px
             @media screen and (max-width: 768px)
                 &--768px
                     font-size: 35px
+
+        &_26px
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 26px
+
+        &_20px
+            font-size: 20px
+
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 20px
+        
+        &_22px
+            font-size: 22px
+        
+        &_18px
+            font-size: 18px
+            
+            @media screen and (max-width: 425px)
+                &--425px
+                    font-size: 18px
+
+        &_16px
+            font-size: 16px
 
     &-transform
         &_uppercase
@@ -162,17 +545,24 @@ $color_sienna: #98764b
     padding-left: 10px
     padding-right: 10px
     max-width: 1160px
-    width: 100%
+    width: calc(100% - 20px)
 
-    @media screen and (min-width: 1200px)
+    @media screen and (max-width: 1200px)
         padding-left: 0
         padding-right: 0
+
+    @media screen and (max-width: 425px)
+        padding-left: 60px
+        padding-right: 60px
+        width: calc(100vw - 120px)
 
 .button
     display: inline-block
     text-decoration: none
     @extend .font-family_cuprum
     text-transform: uppercase
+    transition: .3s
+    cursor: pointer
 
     &__border
         border-width: 1px
@@ -187,10 +577,17 @@ $color_sienna: #98764b
             background-color: $color_sienna
             @extend .font-color_white
 
+    &__black
+        background-color: #333 !important
+        color: #fff
+        border: unset
+
+        &:hover
+            background-color: $color_sienna !important
+
     &__white
         border-color: #fff
         @extend .font-color_white
-        transition: .3s
 
         &:hover
             background-color: #fff
@@ -211,8 +608,29 @@ $color_sienna: #98764b
             &--768px
                 width: 100%
 
+    &_65
+        width: 65%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 65%
+
     &_50
         width: 50%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 50%
+
+    &_40
+        width: 40%
+
+    &_35
+        width: 35%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 35%
         
 .height
     &_100
@@ -221,9 +639,23 @@ $color_sienna: #98764b
     &_100vh
         height: 100vh
 
+    &_unset
+        height: unset
+
+        @media screen and (max-width: 425px)
+            &--425px
+                height: unset
+
 .min-height
     &_100vh
         min-height: 100vh
+
+    &_unset
+        min-height: unset
+
+        @media screen and (max-width: 425px)
+            &--425px
+                min-height: unset
 
 .max-height
     &_100vh
@@ -250,6 +682,7 @@ ul.menu
 
     li
         @extend .padding_0
+        white-space: nowrap
 
         a
             text-decoration: none
@@ -258,7 +691,7 @@ ul.menu
 p
     margin: 0
 
-h1, h2
+h1, h2, .h1, .h2
     @extend .font-family_cuprum
     @extend .margin_0
     @extend .padding_0
@@ -266,12 +699,31 @@ h1, h2
 button.button
     background-color: unset
 
+a
+    &[href^="mailto:"]
+        position: relative
+        padding-left: 1.5em
+
+        &:before
+            content: ''
+            mask-image: url('../img/email-icon.png')
+            mask-size: contain
+            width: 1em
+            height: 1em
+            display: inline-block
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            transition: .3s
+
 body
     @extend .margin_0
     @extend .display_grid
     min-height: 100vh
     max-width: 100vw
     grid-template-rows: 1fr auto
+    overflow-x: hidden
 
 header
     box-shadow: -4px 2px 10px rgba(0, 0, 0, 0.35)
@@ -279,23 +731,26 @@ header
     z-index: 20
 
     nav
-        padding: 19px 0 8px 0
-        margin-bottom: 9px
+        padding: 18.5px 0 18.5px 0
+
+        @media screen and (max-width: 425px)
+            &:not(:last-child)
+                border-bottom: 2px solid #ccc
 
         .logo
             grid-template-columns: auto auto
             column-gap: 9px
-            transform: translate(0, 3px)
+            transition: .3s
 
             img
-                height: 46px
+                height: 38px
 
                 @media screen and (max-width: 768px)
                     height: 35px
                 
             &__cat
-                height: 37px
-                width: 85px
+                height: 39px
+                width: 78px
                 transform: translateY(3px)
                 background-color: $color_sienna
                 mask-size: contain
@@ -304,6 +759,9 @@ header
                 @media screen and (max-width: 768px)
                     height: 27px
                     width: 64px
+
+                @media screen and (max-width: 425px)
+                    display: none
     
         .menu
             grid-template-columns: auto auto
@@ -316,11 +774,14 @@ header
                 a
                     @extend .button
                     @extend .font-color_black
+                    transition: .3s
+
+                    &:hover
+                        color: lighten(#000, 40%)
 
             .button
                 font-size: 15px
-                padding: 18px 18px 13px 23px
-                line-height: 12px
+                padding: 15px 18px 15px 23px
                 letter-spacing: 1.1px
                 font-weight: 700
 
@@ -336,6 +797,11 @@ footer
     padding-bottom: 58px
     background-color: #000
     color: #fff
+    overflow: hidden
+
+    a[href^="mailto:"]
+        &:before
+            background-color: #fff
 
     .delimeter
         background-color: #ffffff33
@@ -354,6 +820,7 @@ footer
 
             &__copyright
                 transform: translateY(4px)
+                color: darken(#fff, 20)
 
                 .logo
                     width: 100px
@@ -363,14 +830,21 @@ footer
                     mask-repeat: no-repeat
                     transform: translateX(-6px)
                     margin-bottom: 10px
+                    transition: .3s
 
-                h2
+                .h2, h2
                     font-size: 20px
-                    font-weight: 400px
+                    font-weight: 400
+
+                    a
+                        color: #fff
+                        text-decoration: unset
 
                 p
                     font-size: 13px
-                    opacity: 0.4
+                    font-weight: 300
+                    color: #d6d6d6
+                    line-height: 1.45
 
                 @media screen and (max-width: 768px)
                     text-align: center
@@ -383,13 +857,9 @@ footer
                     column-gap: 10px
 
                 @media screen and (max-width: 425px)
-                    grid-template-columns: 1fr 1fr
+                    grid-template-columns: 1fr
 
-                    div:nth-child(3)
-                        grid-column-start: 1
-                        grid-column-end: 3
-
-                h2
+                .h2, h2
                     font-size: 20px
                     margin-bottom: 18px
 
@@ -398,6 +868,12 @@ footer
                     font-size: 13px
                     line-height: 26px
                     text-transform: uppercase
+
+                a
+                    display: inline-block
+
+                    &:hover
+                        transform: scale(1.1)
 
             .contacts
                 grid-auto-rows: auto
@@ -409,55 +885,124 @@ footer
                     font-size: 16px
                     width: 168px
 
-            .subscribe
-                grid-template-columns: auto auto
-                column-gap: 20px
-                transform: translateY(4px)
-
-                .button
-                    width: 48px
-                    height: 48px
-
-                    div
-                        background-color: #fff
-                        mask-size: 100%
-                        mask-repeat: no-repeat
-                        mask-size: 60%
-                        mask-position: center
-
-                        &:hover
-                            background-color: #000
+                a
+                    &:hover
+                        color: #fff !important
 
         &-bottom
-            font-size: 13px
-            color: #ffffff66
-            font-weight: 200
+            font-size: 12px
+            color: #6e6e6e
+            font-weight: 400
+            line-height: 1.45
 
             a
-                color: #ffffff66
+                color: #999
                 text-decoration: none
 
     a
         transition: .3s
 
-        &:hover
-            color: #b4874e
+    .subscribe
+        grid-template-columns: auto auto
+        column-gap: 20px
+        transform: translateY(4px)
+
+        .button
+            width: 48px
+            height: 48px
+
+            div
+                background-color: #fff
+                mask-size: 100%
+                mask-repeat: no-repeat
+                mask-size: 60%
+                mask-position: center
+
+                &:hover
+                    background-color: #000
 
 main
     z-index: 1
+
+    > .space
+        height: 100px
+
+        @media screen and (max-width: 425px)
+            height: 150px
+
+.blog-title__menu
+    max-width: calc(100vw - 20px)
+
+    @media screen and (max-width: 425px)
+        max-width: calc(100vw - 60px)
+
+    menu
+        overflow-x: auto
+        overflow-y: hidden
+        -ms-overflow-style: none
+        overflow: -moz-scrollbars-none
+
+        &::-webkit-scrollbar
+            display: none
+    
+    li
+        margin: 11px 24px 8px
+        text-transform: uppercase
+        font-size: 17px
+
+        a
+            position: relative
+
+            &:hover,
+            &.active
+                color: $color_sienna
+
+            &.active
+                pointer-events: none
+
+    &:before,
+    &:after
+        content: ''
+        height: 1px
+        background-color: #0d0e0e
+        position: absolute
+
+    &:before
+        width: 100%
+        left: 0
+
+    &:after
+        width: calc(100% - 30px)
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+
 
 #blog
     &_title
         background-image: url('../img/bg_blog_title.png')
         background-position: center
 
+        @media screen and (max-width: 425px)
+            background-image: unset
+
         .wrapper
             padding-top: 205px
             padding-bottom: 20px
+
+            @media screen and (max-width: 425px)
+                padding-top: 150px
         
         .blog-title
             &__content
                 margin-top: 68px
+
+                @media screen and (max-width: 425px)
+                    margin-top: 30px
+
+                img
+                    width: unset
+                    height: unset
 
                 p
                     line-height: 24.8px
@@ -465,61 +1010,6 @@ main
 
                     &:not(:last-child)
                         margin-bottom: 21px
-
-            &__menu
-                max-width: calc(100vw - 20px)
-
-                menu
-                    overflow-x: auto
-                    -ms-overflow-style: none
-                    overflow: -moz-scrollbars-none
-
-                    &::-webkit-scrollbar
-                        display: none
-                
-                li
-                    margin: 11px 24px 8px
-                    text-transform: uppercase
-                    font-size: 17px
-
-                    a
-                        position: relative
-
-                        &:after
-                            content: ''
-                            height: 4px
-                            bottom: -9px
-                            position: absolute
-                            width: 120%
-                            left: 50%
-                            transform: translateX(-50%)
-                            background-color: $color_sienna
-                            z-index: 10
-                            display: none
-
-                        &:hover,
-                        &.active
-                            color: $color_sienna
-
-                        &.active:after
-                            display: block
-
-                &:before,
-                &:after
-                    content: ''
-                    height: 1px
-                    background-color: #0d0e0e
-                    position: absolute
-
-                &:before
-                    width: 100%
-                    left: 0
-
-                &:after
-                    width: calc(100% - 30px)
-                    bottom: 0
-                    left: 50%
-                    transform: translateX(-50%)
 
         h1
             margin-bottom: 3px
@@ -530,20 +1020,35 @@ main
             letter-spacing: -.7px
             margin-bottom: 26px
 
+            @media screen and (max-width: 425px)
+                font-size: 22px
+                margin-bottom: 10px
+                padding-bottom: 10px
+
     &_articles
-        padding-top: 119px
+        padding-top: 50px
+        overflow-x: hidden
 
         @media screen and (max-width: 768px)
             padding-top: 50px
+
+        @media screen and (max-width: 425px)
+            padding-top: 25px
 
         .articles
             &-title
                 margin-bottom: 24px
 
-                h1
+                @media screen and (max-width: 425px)
+                    margin-bottom: 0
+
+                h1, .h1
                     border-bottom: 3px solid $color_sienna
                     font-weight: 400
                     padding-bottom: 13px
+
+                    @media screen and (max-width: 425px)
+                        padding-bottom: 6px
 
                 h2
                     font-size: 24px
@@ -564,6 +1069,7 @@ main
                             grid-template-columns: 1fr
                             grid-template-rows: auto auto
                             row-gap: 20px
+                            padding-bottom: 0
 
                         &:not(:last-child)
                             border-bottom: 1px solid #0d0e0e4d
@@ -571,6 +1077,16 @@ main
                         &__img
                             height: 0
                             padding-bottom: 68%
+
+                            a
+                                position: absolute
+                                width: 100%
+                                height: 100%
+                                display: block
+
+                                img
+                                    width: 100%
+                                    height: 100%
 
                         &__content
                             &-subject
@@ -601,20 +1117,35 @@ main
                             h1
                                 text-transform: uppercase
 
-                            h1
+                            h1, .h1
                                 font-size: 28px
                                 margin-top: 22px
+                                margin-bottom: 15px
                                 letter-spacing: -0.7px
+                                transition: .3s
+                                font-weight: 400
 
-                                a
-                                    text-decoration: none
-                                    color: #000
+                                &:hover
+                                    color: $color_sienna
+
+                                @media screen and (max-width: 425px)
+                                    font-size: 22px
+                                    margin-top: 5px
+
+                            a
+                                text-decoration: none
+                                color: #000
+                                transition: .3s
 
                             p
-                                margin-top: 15px
                                 line-height: 24px
                                 letter-spacing: -0.2px
                                 @extend .font-family_roboto
+                                transition: .3s
+
+                            &:hover
+                                p
+                                    color: #575757
 
                     &-load
                         margin: 58px 0
@@ -652,7 +1183,10 @@ main
         padding-top: 125px
 
         @media screen and (max-width: 768px)
-            padding-top: 160px
+            padding-top: 100px
+
+        @media screen and (max-width: 425px)
+            padding-top: 150px
 
         .article
             &-head
@@ -660,6 +1194,7 @@ main
                     text-transform: uppercase
                     font-weight: 400
                     border-bottom: 3px solid $color_sienna
+                    padding-bottom: 8px
 
             &-author
                 color: #999
@@ -667,6 +1202,7 @@ main
                 grid-template-columns: auto auto
                 column-gap: 12px
                 margin-top: 10px
+                margin-bottom: 30px
                 @extend .font-family_roboto
 
             &-preview
@@ -694,36 +1230,16 @@ main
                     font-weight: 400
 
             &-body
-                margin-bottom: 113px
-
-                @media screen and (max-width: 768px)
-                    margin-bottom: 30px
-
-                h1
-                    clear: both
-                    margin-top: 57px
-                    border-bottom: 1px solid #98764b
-                    padding-bottom: 5px
-                    margin-bottom: 26px
-                    font-size: 30px
-                    font-weight: 400
-
-                p
-                    margin-bottom: 16px
-                    font-size: 16px
-                    line-height: 24.8px
-                    @extend .font-family_roboto
-
-
                 blockquote.article-quote
-                    padding: 45px 60px 45px 95px
-                    display: flex
-                    justify-content: center
-                    @extend .font-family_roboto
+                    padding: 45px 60px 45px 125px
+                    @extend .font-family_oswald
                     margin: 40px 0
                     font-size: 16px
                     @extend .display_flex
                     @extend .align-items_center
+
+                    @media screen and (max-width: 425px)
+                        padding: 45px 30px 45px 30px
 
                     &--bg
                         background-color: $color_sienna
@@ -755,9 +1271,13 @@ main
 
                     &--border
                         border: 1px solid $color_sienna
+                        padding: 45px 60px 45px 60px
+
+                        @media screen and (max-width: 425px)
+                            padding: 25px 30px 25px 30px
 
                     &--right
-                        padding: 15px 31px 45px 95px
+                        padding: 15px 31px 45px 125px
                         width: calc(50% - 126px)
                         margin: 0 0 0 48%
 
@@ -765,8 +1285,15 @@ main
                             width: unset
                             margin: 0
 
+                        @media screen and (max-width: 425px)
+                            padding: 15px 30px 45px 30px
+
                     &--cat
                         position: relative
+                        padding: 45px 60px 45px 60px
+
+                        @media screen and (max-width: 425px)
+                            padding: 25px 30px 25px 30px
 
                         &:before
                             content: ''
@@ -781,6 +1308,12 @@ main
                             background-color: $color_sienna
                             margin-bottom: 5px
                             transform: scaleX(-1)
+
+                    &--black
+                        border-color: #000
+
+                        &:before
+                            background-color: #d8d8d8
 
             &-text
                 @extend .font-family_roboto
@@ -867,6 +1400,10 @@ main
                     &:last-child
                         margin-right: 0
 
+#blog_articles + #blog_post_menu
+    menu
+        border-top: unset
+
 #blog_footer
     background-color: #000
     margin-bottom: -16px
@@ -910,6 +1447,13 @@ main
     font-weight: 400
     margin-bottom: 30px
     @extend .font-family_roboto
+    overflow-x: auto
+    overflow-y: hidden
+    -ms-overflow-style: none
+    overflow: -moz-scrollbars-none
+
+    &::-webkit-scrollbar
+        display: none
 
     a
         text-decoration: unset
@@ -928,7 +1472,8 @@ main
         display: inline-block
         width: 9px
         height: 9px
-        margin-left: 5px
+        margin-left: 13px
+        margin-right: 9px
 
     &-current,
     .kb_title
@@ -939,7 +1484,16 @@ main
     overflow-x: auto
 
     menu
-        margin-top: 35px
+        max-width: calc(100vw - 20px)
+        overflow-x: auto
+        overflow-y: hidden
+        -ms-overflow-style: none
+        overflow: -moz-scrollbars-none
+        padding: 35px 0
+        border-top: 1px solid #0d0e0e4d
+
+        &::-webkit-scrollbar
+            display: none
 
         li
             display: block
@@ -947,6 +1501,7 @@ main
             margin: 0 7.5px
             font-size: 18px
             background-color: #c2c2c2
+            transition: .3s
 
             &:first-child
                 margin-left: 0
@@ -964,6 +1519,1046 @@ main
                 &.active
                     background-color: #98764b
 
+            &:hover
+                background-color: #88673d7d
+
 .page_post_bottom
     background-color: #f8f8f8
-    padding: 35px 0
+
+header
+    .menu
+        margin-top: 0 !important
+
+.social-bg
+    &--telegram
+        &:hover
+            color: #fff
+            background-color: #269fdd
+
+            div
+                background-color: #fff !important
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #269fdd
+
+
+    &--whatsapp
+        &:hover
+            color: #fff
+            background-color: #35d151
+
+            div
+                background-color: #fff
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #35d151
+
+    &--viber
+        &:hover
+            color: #fff
+            background-color: #794a98
+
+            div
+                background-color: #fff
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #794a98
+
+    &--youtube
+        &:hover
+            color: #fff
+            background-color: #f20000
+
+            div
+                background-color: #fff !important
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #f20000
+
+    &--facebook
+        &:hover
+            color: #fff
+            background-color: #3f62a9
+
+            div
+                background-color: #fff !important
+
+        @media screen and (max-width: 425px)
+            color: #fff
+            background-color: #3f62a9
+
+#scroll_top
+    height: calc(100vh - 75px)
+    width: calc((100% - 1160px) / 2)
+    @extend .position_fixed
+    z-index: 999
+    margin-top: 86px
+    cursor: pointer
+    display: none
+    transition: .3s
+
+    @media screen and (max-width: 1360px)
+        display: none !important
+
+    .text
+        height: 100%
+        width: 100%
+        max-width: 150px
+        display: grid
+        justify-content: center
+        align-items: baseline
+        grid-template-columns: auto auto
+        column-gap: 10px
+        padding-top: 10px
+        @extend .font-family_roboto
+        opacity: 0.5
+        transition: .3s
+
+        &:before
+            content: ''
+            width: 15px
+            height: 15px
+            mask-image: url('../img/icons8-chevron-up-100.png')
+            mask-size: cover
+            background-color: #000
+            display: block
+
+    &:hover
+        .text
+            background-color: #a0a0a033
+            opacity: 0.8
+
+.repeater
+    .tn-atom
+        line-height: 1.45
+
+    .repeater
+        &-title
+            font-size: 28px
+            line-height: 34px
+            @extend .font-family_cuprum
+            font-weight: 500
+            margin-top: 68px
+
+            @media screen and (max-width: 425px)
+                font-size: 22px
+                line-height: 26px
+                margin-top: 90px
+
+        &-number
+            font-size: 380px
+            color: #f6f3ef
+            @extend .font-family_roboto
+            position: absolute
+            z-index: -1
+            line-height: 240px
+            margin-left: -40px
+            margin-top: 20px
+            font-weight: 500
+
+            @media screen and (max-width: 425px)
+                margin-left: 0
+                left: 50%
+                transform: translateX(-50%)
+                font-size: 350px
+                font-weight: 500
+                margin-top: 0
+
+            &--no-title
+                margin-top: 68px
+
+                @media screen and (max-width: 425px)
+                    margin-top: 90px
+
+    &_1
+        position: relative
+        clear: both
+
+        .article-quote
+            padding: 0 0 0 75px !important
+            margin: 0 !important
+            align-items: start !important
+
+            @media screen and (max-width: 425px)
+                margin-top: 1.5em !important
+
+        .repeater-text
+            grid-template-columns: 1fr 1fr
+
+            div:nth-child(2) 
+                > p,
+                > blockquote
+                    padding-left: 55px !important
+
+                    @media screen and (max-width: 425px)
+                        padding-left: 0 !important
+
+                > blockquote:before
+                    left: 0 !important
+
+            @media screen and (max-width: 425px)
+                grid-template-columns: 1fr
+                row-gap: 2em
+
+    &_2
+        position: relative
+        @extend .font-family_roboto
+        line-height: 1.45
+
+        .repeater
+            &-number
+                font-weight: 700
+                font-size: 65px
+                top: 0
+                left: 0
+                height: 100%
+                line-height: unset
+                margin-left: 0
+                position: absolute
+                margin-top: -26px
+                color: #f0eae4
+
+                @media screen and (max-width: 425px)
+                    transform: translateX(0)
+
+    
+
+            @media screen and (max-width: 425px)
+                margin-top: 1.5em
+
+.element-background
+    color: #fff
+    position: relative
+    
+    &:before
+        content: ''
+        width: 100vw
+        height: 100%
+        position: absolute
+        left: 50%
+        transform: translateX(-50vw)
+        z-index: -1
+
+    h1
+        border-bottom-color: #fff !important
+
+article
+    h1
+        clear: both
+        margin-top: 57px
+        border-bottom: 1px solid #98764b
+        padding: 0 0 5px 0 !important
+        margin-bottom: 26px
+        font-size: 30px
+        font-weight: 400
+
+        @media screen and (max-width: 425px)
+            font-size: 22px
+
+        &.has-background
+            position: relative
+            margin: 0
+            border-bottom: unset
+
+            &:after
+                content: ''
+                position: absolute
+                background-color: #fff
+                height: 1px
+                bottom: 0
+                left: 0
+                width: 100%
+
+    p, div
+        @extend .font-family_roboto
+
+    p
+        font-size: 16px
+        line-height: 24.8px
+        padding: 0 !important
+
+    p, h1, div
+        position: relative
+
+        &:before
+            content: ''
+            position: absolute
+            height: 100%
+            width: 100vw
+            top: 0
+            left: 50%
+            transform: translateX(-50vw)
+            z-index: -1
+
+        &[style="background-color:#98764b"]
+            &:before
+                background-color: #98764b
+
+        &[style="background-color:#f8f8f8"]
+            &:before
+                background-color: #f8f8f8
+
+    h1[style="background-color:#f8f8f8"]
+        &:after
+            background-color:#98764b
+
+    a
+        color: #d5c8b7
+        transition: .3s
+
+        &:hover
+            color: #fff
+
+    img.alignleft
+        float: left
+
+.wp-block-media-text__media img
+    width: unset !important
+
+.wp-block-columns
+    margin: 0
+
+.wp-block-button__link
+    background-color: #00000000
+    border-radius: 0
+    @extend .button
+    @extend .button__border
+    @extend .button__sienna
+
+.article-slider
+    .swiper
+        &-button
+            &-prev,
+            &-next
+                display: none
+
+                &:after
+                    color: #000
+
+                @media screen and (max-width: 768px)
+                    display: block
+
+        &-slide
+            display: flex
+            justify-content: center
+            cursor: zoom-in
+
+            img
+                width: 100%
+                height: auto
+
+        &-pagination
+            display: none
+
+            @media screen and (max-width: 768px)
+                display: block
+
+    &-full
+        top: 0
+        left: 0
+        width: 100%
+        height: 100vh
+        z-index: 2000
+        position: fixed
+        background-color: #fff
+        display: none
+        user-select: none
+        cursor: zoom-out
+
+        &.show
+            display: block
+
+        .swiper
+            &-slide
+                display: flex
+                justify-content: center
+                align-items: center
+                
+            &-button
+                &-prev,
+                &-next
+                    &:after
+                        color: #000
+
+.article-quote,
+.wp-block-column
+    a
+        color: #000
+        transition: .3s
+
+        &:hover
+            color: $color_sienna
+
+.has-text-color.has-white-color
+    a
+        color: #d5c8b7
+        
+        &:hover
+            color: #fff
+
+.wp-block-column
+    .repeater_2
+        margin-bottom: 10px !important
+
+        @media screen and (max-width: 425px)
+            margin-bottom: 25px !important
+
+.article-quote
+    img
+        margin-right: 30px
+
+.opacity_02
+    opacity: 0.2
+
+.flex-column
+    &_10-90
+        .wp-block-column
+            &:first-child
+                flex-basis: 10% !important
+
+            &:last-child
+                flex-basis: 90% !important
+    
+    &_20-80
+        .wp-block-column
+            &:first-child
+                flex-basis: 20% !important
+
+            &:last-child
+                flex-basis: 80% !important
+
+            @media screen and (max-width: 425px)
+                &:first-child,
+                &:last-child
+                    flex-basis: 100% !important
+
+    &_27-73
+        .wp-block-column
+            &:first-child
+                flex-basis: 27% !important
+
+            &:last-child
+                flex-basis: 73% !important
+
+    &_28-72
+        .wp-block-column
+            &:first-child
+                flex-basis: 28% !important
+
+            &:last-child
+                flex-basis: 72% !important
+
+            @media screen and (max-width: 425px)
+                &:first-child,
+                &:last-child
+                    flex-basis: 100% !important
+
+    &_8-92
+        .wp-block-column
+            &:first-child
+                flex-basis: 8% !important
+
+            &:last-child
+                flex-basis: 92% !important
+
+                @media screen and (max-width: 768px)
+                    flex-basis: 80% !important
+
+.wp-block-columns.has-background
+    padding-left: 0
+    padding-right: 0
+
+.wp-block-separator
+    border-top: unset
+
+    &.height-3px
+        height: 3px
+
+    &.margin-top_14px
+        margin-top: 14px
+
+    &.margin-bottom_41px
+        margin-bottom: 41px
+
+.bg-whitesmoke
+    background-color: #f8f8f8
+
+.block-separator    
+    height: 1px
+
+    &.bg-whitesmoke
+        &::before
+            content: ''
+            width: 100%
+            background-color: #98764b
+            height: 1px
+            left: 50%
+            transform: translateX(-50%)
+            z-index: 10
+            top: unset
+
+        &:after
+            content: ''
+            position: absolute
+            left: 0
+            background-color: #f8f8f8
+            width: 100vw
+            margin-left: 50%
+            left: -50vw
+            height: 100%
+            top: 0
+        
+.wp-block-column
+    .wp-block-buttons
+        a:hover
+            color: #fff
+
+.link-padding_0
+    a
+        padding: 0 !important
+
+.link-text-decoration_none
+    a
+        text-decoration: none
+
+.columns-separator
+    .wp-block-column:not(:last-child)
+        border-right: 1px solid #000
+
+        @media screen and (max-width: 768px)
+            border-right: unset
+
+#page404
+    min-width: 100%
+    min-height: 100vh
+    background-image: url('../img/404/backround_404.jpg')
+    background-size: cover
+    display: flex
+    justify-content: center
+
+    @media screen and (max-width: 768px)
+        align-items: center
+
+    .number-404
+        margin-top: 6vh
+        position: absolute
+        max-width: 100%
+
+        @media screen and (max-width: 768px)
+            margin-top: unset
+
+    .wrapper-404
+        z-index: 10
+        height: 100vh
+        padding: 0 10px
+
+        > div
+            grid-template-columns: auto 1fr
+            column-gap: 40px
+
+    .cat-404
+        @media screen and (max-width: 768px)
+            width: 25vw
+
+    .text-404
+        @media screen and (max-width: 768px)
+            grid-column-start: 1
+            grid-row-start: 1
+
+    h1
+        font-size: 30px
+        line-height: 36px
+
+    p
+        font-family: Roboto
+        font-size: 18px
+        line-height: 27px
+        margin-top: 25px
+        font-weight: 500
+        max-width: 505px
+
+    .sign-404
+        text-align: right
+
+    .button
+        margin-top: 25px
+        font-size: 18px
+        line-height: 28px
+        padding: 13px 63px
+        background-color: $color_sienna
+        transition: .3s
+        color: #fff
+        border: unset
+
+        &:hover
+            background-color: lighten($color_sienna, 20%)
+
+.kama_breadcrumbs
+    a
+        transition: .3s
+        
+        &:hover
+            color: #575757
+
+#social-networks
+    position: fixed
+    bottom: 0
+    right: 0
+    z-index: 3000
+    margin-bottom: 15px
+    margin-right: 15px
+
+    @media screen and (max-width: 425px)
+        display: none
+
+    .social-icons
+        &__button
+            width: 64px
+            height: 64px
+            border: 2px solid $color_sienna
+            border-radius: 100%
+            background-color: $color_sienna
+            position: relative
+            transition: .3s
+            cursor: pointer
+            box-shadow: 0 0 20px 0 rgb(0, 0, 0, 40%)
+
+            &:after,
+            &:before
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                mask-repeat: no-repeat
+                mask-position: center
+                transition: .3s
+
+            &:after
+                mask-image: url('../img/social/messenger.png')
+                background-color: #fff
+                mask-size: 50%
+
+            &:before
+                mask-image: url('../img/social/close.png')
+                background-color: #000
+                mask-size: 25%
+                opacity: 0
+                transform: scale(0)
+
+            &.active
+                background-color: #fff
+
+                &:after
+                    opacity: 0
+                    transform: scale(0)
+                
+                &:before
+                    opacity: 1
+                    transform: scale(1)
+
+        &__list
+            flex-direction: column
+            position: absolute
+            bottom: 100%
+            left: 50%
+            transform: translateX(-50%) translateY(32px)
+            width: 50px
+            height: 0
+            z-index: -1
+            overflow: hidden
+ 
+        &__link
+            margin-bottom: 10px
+            width: 50px
+            height: 50px
+            min-width: 50px
+            min-height: 50px
+
+            &:after
+                background-color: #fff
+                mask-size: 50%
+
+            &--email
+                background-color: #168de2
+
+                &:after
+                    mask-image: url('../img/social/email.png')
+
+            &--skype
+                background-color: #00b2f0
+
+                &:after
+                    mask-image: url('../img/social/skype.png')
+
+            &--messenger
+                background-color: #0284fe
+
+                &:after
+                    mask-image: url('../img/social/messenger.png')
+
+            &--viber
+                background-color: #935bbe
+
+                &:after
+                    mask-image: url('../img/social/viber.png')
+
+            &--whatsapp
+                background-color: #27d061
+
+                &:after
+                    mask-image: url('../img/social/whatsapp.png')
+
+            &--telegram
+                background-color: #0087d0
+
+                &:after
+                    mask-image: url('../img/social/telegram.png')
+
+    .social-icons__button.active + .social-icons__list
+        transform: translateX(-50%)
+
+#social-networks-header
+    .social-icons
+        &__link
+            margin-right: 10px
+            width: 20px
+            height: 20px
+
+            &:after
+                background-color: #000
+                mask-size: 100%
+
+            &--email
+                &:after
+                    mask-image: url('../img/social/email-circuit.png')
+
+            &--skype
+                &:after
+                    mask-image: url('../img/social/skype-circuit.png')
+
+            &--messenger
+                &:after
+                    mask-image: url('../img/social/messenger-circuit.png')
+
+            &--viber
+                &:after
+                    mask-image: url('../img/social/viber-circuit.png')
+
+            &--whatsapp
+                &:after
+                    mask-image: url('../img/social/whatsapp-circuit.png')
+
+            &--telegram
+                &:after
+                    mask-image: url('../img/social/telegram-circuit.png')
+
+            &:hover
+                transform: scale(1.3)
+
+.social-icons
+    &__list
+        display: flex
+        transition: .3s
+ 
+    &__link
+        border-radius: 100%
+        transition: .3s
+        display: grid
+        grid-template-rows: 1fr
+        position: relative
+        padding: 0 !important
+
+        &:after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            mask-position: center
+            mask-repeat: no-repeat
+
+.wp-block-image
+    img
+        width: 100%
+        height: unset
+
+.hide-img-on-425px
+    > figure
+        img
+            @media screen and (max-width: 425px)
+                display: none
+
+.wp-block-media-text .wp-block-media-text__content
+    padding: 0 !important
+
+.article-quote
+    p
+        &::before
+            display: none
+
+.menu-slide-icon
+    position: relative
+    height: 10px
+    width: 50px
+
+    &:after,
+    &:before
+        position: absolute
+        content: ''
+        background-color: #000
+        height: 3px
+        width: 100%
+
+    &:before
+        bottom: 0
+
+#menu-slide-bg
+    position: fixed
+    width: 100vw
+    height: 100vh
+    top: 0
+    left: 0
+    z-index: 2999
+    transition: background .3s
+    background-color: #000000b3
+    display: none
+
+#menu-slide
+    height: calc(100vh - 70px)
+    width: calc(75vw - 53px)
+    background-color: #11191f
+    padding: 40px 27px 30px
+    position: fixed
+    right: 0
+    transform: translateX(100%)
+    transition: .3s
+    z-index: 3000
+
+    .menu
+        &-list
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            transition: .3s
+            height: 100%
+
+            &-close
+                position: fixed
+                display: flex
+                justify-content: center
+                align-items: center
+                right: 0
+                top: 0
+                width: 24px
+                height: 24px
+                margin: 13px 14px 0 0
+
+                &:after,
+                &:before
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    background-color: #fff
+                    height: 2px
+
+                &:after
+                    transform: rotate(-45deg)
+
+                &:before
+                    transform: rotate(45deg)
+
+            .menu
+                li
+                    color: #dadada
+                    @extend .font-family_cuprum
+                    font-size: 24px
+                    transition: .3s
+                    text-transform: uppercase
+                    margin-bottom: 17px
+
+                    &.current-menu-item,
+                    &:hover
+                        color: #98764b
+
+                ul
+                    list-style: none
+                    margin-top: 8px
+                    padding-inline-start: 0px
+
+                    li
+                        margin-bottom: 8px
+                        white-space: initial
+
+                    a
+                        font-size: 18px !important
+
+        &-social
+            display: grid
+            grid-template-columns: 1fr
+            row-gap: 10px
+
+            &-icon
+                width: 30px
+                height: 30px
+                display: block
+                border-radius: 100%
+                background-color: #fff
+                position: relative
+                margin-right: 7px
+
+                &:after
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                    mask-size: 60%
+                    mask-position: center
+                    mask-repeat: no-repeat
+                    background-color: #11191f
+
+                &--facebook:after
+                    mask-image: url('../img/social/facebook_filled.png')
+
+                &--youtube:after
+                    mask-image: url('../img/social/youtube_filled.png')
+
+                &--telegram:after
+                    mask-image: url('../img/social/telegram_filled.png')
+
+            a
+                display: block
+                padding: 11px 0 13px
+                font-size: 16px
+
+    &.active
+        transform: translateX(0)
+
+blockquote.bg-whitesmoke
+    position: relative
+
+    &:before
+        content: ''
+        left: 50%
+        transform: translateX(-50%)
+        height: calc(100% + 80px)
+        position: absolute
+        background-color: #f8f8f8
+        width: 100vw
+        z-index: -1
+
+    &.margin-bottom_150px
+        &:before
+            height: calc(100% + 190px)
+
+            @media screen and (max-width: 425px)
+                height: calc(100% + 165px)
+
+h1.has-background
+    font-size: 24px !important
+
+p
+    img
+        width: 100%
+
+.policy-link
+    transition: .3s
+    text-decoration: underline !important
+    
+    &:hover
+        color: $color_sienna
+
+.gdpr
+    min-height: 70px
+    padding: 10px
+    text-align: center
+    grid-template-columns: 1fr 20%
+    position: fixed
+    bottom: 0
+    background-color: #fff
+    z-index: 9999
+    width: 100%
+    box-shadow: 0 8px 31px 0 #bababa, 0 2px 14px 0 #c2c2c2
+    @extend .font-family_roboto
+    gap: 10px
+
+    @media screen and (max-width: 425px)
+        grid-template-columns: 1fr
+        padding: 20px 10px 10px 10px
+
+    p
+        font-size: 12px
+        line-height: 19px
+
+        a
+            color: #000
+            transition: .3s
+
+            &:hover
+                color: $color_sienna
+
+    .button
+        padding: 10px 45px
+
+.page-nav
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    margin-bottom: 60px
+
+    @media screen and (max-width: 425px)
+        margin-bottom: 20px
+
+    a, span
+        padding: 15px
+        display: block
+        font-size: 24px
+        margin: 0 5px
+        text-align: center
+
+        @media screen and (max-width: 425px)
+            font-size: 15px
+            padding: 10px
+
+        &:first-child
+            margin-left: 0
+
+        &:last-child
+            margin-right: 0
+
+        &.prev,
+        &.next
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+
+            &:after
+                content: ''
+                position: absolute
+                mask-image: url('../img/next.png')
+                mask-size: cover
+                mask-position: center
+                background-color: $color_sienna
+                width: 1em
+                height: 1em
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+        &.prev::after
+            transform: translate(-50%, -50%) rotate(180deg)
+
+        &:hover:after
+            background-color: #fff
+
+        &.current
+            background-color: #333 !important
+            color: #fff
+            border: unset
+            cursor: default
+
+            &:hover
+                background-color: #333 !important
+                color: #fff

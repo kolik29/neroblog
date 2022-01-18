@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM;AACN,MAAM,AAAA,MAAM,CAAC;EACZ,MAAM,EAAE,yBAAyB,CAAC,KAAK,CAAC,yBAAyB;EACjE,aAAa,EAAE,0BAA0B;EACzC,KAAK,EAAE,uBAAuB;EAC9B,SAAS,EAAE,sBAAsB;EACjC,eAAe,EAAE,IAAI;EACrB,kBAAkB,EAAE,IAAI;EACxB,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,yBAAyB,CAAC,mCAAmC,CAAC,yBAAyB,CAAC,yBAAyB;EAC1H,UAAU,EAAE,0BAA0B,CAAC,qJAAqJ,CAAC,SAAS;EACtM,mBAAmB,EAAE,KAAK,CAAC,yBAAyB,CAAC,GAAG,CAAC,GAAG;CAC5D",
-    "sources": [
-        "forms-editor.scss"
-    ],
-    "names": [],
-    "file": "forms-editor.css"
-}
+{"version":3,"sources":["forms-editor.scss"],"names":[],"mappings":"AAAA;;EAEC,iEAAA;EACA,yCAAA;EACA,8BAAA;EACA,iCAAA;EACA,qBAAA;EACA,wBAAA;EACA,gBAAA;EACA,0HAAA;EACA,sMAAA;EACA,4DAAA;AACD","file":"forms-editor.css"}
