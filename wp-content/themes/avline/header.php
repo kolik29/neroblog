@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -24,10 +26,18 @@
     <?php wp_body_open(); ?>
     <header class="display_flex justify-content_center position_fixed width_100 flex-direction_column align-items_center">
         <nav class="display_flex align-items_center justify-content_space-between wrapper">
-            <span class="logo display_grid">
+            <?php if (is_front_page()): ?>
+                <span class="logo display_grid">
+            <?php else: ?>
+                <a href="/" class="logo display_grid">
+            <?php endif; ?>
                 <img src="<?=get_template_directory_uri();?>/img/logo_brown.svg" alt="">
                 <div class="logo__cat" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
-            </span>
+            <?php if (is_front_page()): ?>
+                </span>
+            <?php else: ?>
+                </a>
+            <?php endif; ?>
             <div class="menu display_grid align-items_center display_none--768px">
                 <?php $telegram = get_option('telegram'); ?>
                 <?php if ($telegram != ''): ?>

@@ -1,14 +1,30 @@
     <footer class="display_flex justify-content_center flex-direction_column align-items_center">
         <div class="footer-content display_grid wrapper">
             <div class="footer-content__copyright display_flex--768px flex-direction_column--768px justify-content_center--768px align-items_center--768px font-align_center--768px">
-                <span href="/">
-                    <div href="/" class="logo" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
-                </span>
+                <?php if (is_front_page()): ?>
+                    <span>
+                <?php else: ?>
+                    <a href="/">
+                <?php endif; ?>
+                        <div class="logo" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
+                <?php if (is_front_page()): ?>
+                    </span>
+                <?php else: ?>
+                    </a>
+                <?php endif; ?>
                 <div class="h2">
-                    <span href="/">
+                    <?php if (is_front_page()): ?>
+                        <span>
+                    <?php else: ?>
+                        <a href="/">
+                    <?php endif; ?>
                         МАРКЕТИНГ<br>
                         ВЕРЕТЕННИКОВА 
-                    </span>
+                    <?php if (is_front_page()): ?>
+                        </span>
+                    <?php else: ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
                 <p class="font-family_roboto margin-top_1em">
                     Создание результативных <br>
@@ -18,7 +34,7 @@
             </div>
             <div class="footer-content__menu display_grid">
                 <div class="display_flex align-items_center--425px flex-direction_column font-align_center--425px">
-                    <div class="h2">МОИ УСЛУГИ</div>
+                    <div class="h2">РАЗДЕЛЫ БЛОГА</div>
                     <div class="font-family_roboto font-weight_200">
                         <div class="menu-">
                             <ul class="menu">

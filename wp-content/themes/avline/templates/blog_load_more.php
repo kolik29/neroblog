@@ -19,6 +19,7 @@ if (array_key_exists('offset', $_POST))
 ?>
 
 <?php if (count($posts) >= $post_per_page + $offset): ?>
+    <?=count($posts)?> >= <?=$post_per_page?> + <?=$offset?>
 <div class="article-load display_flex justify-content_center">
     <button class="article-load__button button button__black js-load_more_posts" data-count="<?=$post_per_page?>" data-cat-id="<?=$cat_ID?>" data-offset="<?=$offset?>" data-show-paginations="<?=$parameters['show_paginations']?>">
         ЗАГРУЗИТЬ ЕЩЕ

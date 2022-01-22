@@ -2722,4 +2722,18 @@ p img {
 .page-nav a.current:hover, .page-nav span.current:hover {
   background-color: #333 !important;
   color: #fff;
+}
+
+a.logo {
+  transition: 0.3s;
+}
+a.logo:hover {
+  transform: scale(1.1) !important;
+}
+
+a .logo {
+  transition: 0.3s;
+}
+a .logo:hover {
+  transform: scale(1.1) !important;
 }/*# sourceMappingURL=style.css.map */

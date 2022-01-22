@@ -48,6 +48,8 @@ global $post;?>
 <?php if (count($posts) > 0): ?>
     <section id="blog_articles" class="display_flex justify-content_center">
         <div class="wrapper">
+            <?php $_SESSION['prev_cat'] = $cat_ID ?>
+
             <div class="articles-title display_flex--425px justify-content_center">
                 <div class="h1 font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
                     <?php $term = get_queried_object(); ?>

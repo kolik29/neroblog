@@ -15,6 +15,12 @@ $(() => {
                 $(this).closest('.article-load').remove();
                 $('.js-page-nav').remove();
                 $('.articles-list').append($(response.page).find('.articles-list').html());
+
+                console.log(location)
+
+                $('.js-page-nav a').each(function() {
+                    $(this).attr('href', $(this).attr('href').replace('https://neroblog.ru/wp-admin/admin-ajax.php/', location.origin + location.pathname))
+                })
             }
 		});
     })
