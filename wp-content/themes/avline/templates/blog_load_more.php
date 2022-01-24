@@ -19,7 +19,6 @@ if (array_key_exists('offset', $_POST))
 ?>
 
 <?php if (count($posts) >= $post_per_page + $offset): ?>
-    <?=count($posts)?> >= <?=$post_per_page?> + <?=$offset?>
 <div class="article-load display_flex justify-content_center">
     <button class="article-load__button button button__black js-load_more_posts" data-count="<?=$post_per_page?>" data-cat-id="<?=$cat_ID?>" data-offset="<?=$offset?>" data-show-paginations="<?=$parameters['show_paginations']?>">
         ЗАГРУЗИТЬ ЕЩЕ
@@ -31,6 +30,11 @@ if (array_key_exists('offset', $_POST))
     <div class="display_flex justify-content_start justify-content_center--425px js-page-nav">
         <?php
             $current_page = intval($offset / $post_per_page) + 1;
+
+            $pageNum = (get_query_var('paged')) ? get_query_var('paged') : 1; // получаем номер текущей страницы и присваиваем значение переменной
+
+            if ($pageNum > $current_page)
+                $current_page = $pageNum;
             
             $args = [
                 'format'  => '?PAGE=%#%',

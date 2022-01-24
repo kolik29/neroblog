@@ -834,7 +834,7 @@ function add_to_allowed_protocols ($protocols) {
 
 if ($_SERVER['REQUEST_URI'] == '/blog/post/' || $_SERVER['REQUEST_URI'] == '/blog/post') {
 	header('HTTP/1.1 301 Moved Permanently'); 
-	header('Location: '.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'//blog/');
+	header('Location: '.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/blog/');
 	exit();
 }
 
@@ -851,4 +851,3 @@ function change_opengraph_image_url( $url ) {
 }
 
 ?>
-

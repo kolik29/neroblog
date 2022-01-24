@@ -35,9 +35,9 @@ global $post;?>
     <section id="blog_articles" class="display_flex justify-content_center">
         <div class="wrapper">
             <div class="articles-title">
-                <h1 class="font-transform_uppercase">
+                <div class="h1 font-transform_uppercase">
                     Статьи НА ТЕМУ <?=get_cat_name($cat_ID);?>
-                </h1>
+                </div>
             </div>
             <div class="articles-list">
                 <?php foreach ($posts as $post): ?>
@@ -52,10 +52,10 @@ global $post;?>
                             <div class="article-item__content-subject font-family_cuprum">
                                 <?php the_category(); ?>
                             </div>
-                            <a href="<?php the_permalink(); ?>">
-                                <h1>
+                            <a href="<?php the_permalink(); ?>" aria-current="page">
+                                <div class="h1 font-transform_uppercase">
                                     <?php the_title(); ?>
-                                </h1>
+                                </div>
                                 <?php the_excerpt(); ?>
                             </a>
                         </div>

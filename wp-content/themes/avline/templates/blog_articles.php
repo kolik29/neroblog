@@ -51,16 +51,18 @@ global $post;?>
             <?php $_SESSION['prev_cat'] = $cat_ID ?>
 
             <div class="articles-title display_flex--425px justify-content_center">
-                <div class="h1 font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
-                    <?php $term = get_queried_object(); ?>
-                    <?php if (get_field('статьи_о', $term) == ''): ?>
+                <?php $term = get_queried_object(); ?>
+                <?php if (get_field('статьи_о', $term) == ''): ?>
+                    <h2 class="h1 font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
                         СТАТЬИ ДЛЯ РУКОВОДИТЕЛЕЙ
-                    <?php else: ?>
+                    </h2>
+                <?php else: ?>
+                    <div class="h1 font-size_46px font-size_35px--768px font-size_26px--425px font-align_center--425px<?php if (is_front_page()): ?> display_none--425px<?php endif; ?>">
                         <?php
                         echo 'Статьи о '.get_field('статьи_о', $term);
                         ?>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="articles-list">
                 <?php foreach ($posts as $post): ?>
@@ -72,13 +74,15 @@ global $post;?>
                             </a>
                         </div>
                         <div class="article-item__content">
-                            <div class="article-item__content-subject font-family_cuprum">
+                            <div class="article-item__content-subject font-family_cuprum" aria-current="page">
                                 <?php the_category(); ?>
                             </div>
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="h1">
+                            <div class="h1">
+                                <a href="<?php the_permalink(); ?>">
                                     <?php the_title(); ?>
-                                </div>
+                                </a>
+                            </div>
+                            <a href="<?php the_permalink(); ?>">
                                 <?php the_excerpt(); ?>
                             </a>
                         </div>

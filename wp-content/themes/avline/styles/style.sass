@@ -147,6 +147,10 @@ $color_sienna: #98764b
         &_30px
             margin-top: 30px !important
 
+            @media screen and (max-width: 425px)
+                &--425px
+                    margin-top: 30px !important
+
         &_1_5em
             margin-top: 1.5em !important
 
@@ -601,13 +605,6 @@ $color_sienna: #98764b
                 background-color: lighten($color_sienna, 20)
         
 .width
-    &_100
-        width: 100%
-
-        @media screen and (max-width: 768px)
-            &--768px
-                width: 100%
-
     &_65
         width: 65%
 
@@ -631,6 +628,16 @@ $color_sienna: #98764b
         @media screen and (max-width: 425px)
             &--425px
                 width: 35%
+    &_100
+        width: 100%
+
+        @media screen and (max-width: 768px)
+            &--768px
+                width: 100%
+
+        @media screen and (max-width: 425px)
+            &--425px
+                width: 100%
         
 .height
     &_100
@@ -2576,3 +2583,21 @@ a
 
         &:hover
             transform: scale(1.1) !important
+
+.author-blog
+    grid-template-columns: repeat(2, 1fr)
+    column-gap: 4em
+
+    @media screen and (max-width: 425px)
+        grid-template-columns: 1fr
+        row-gap: 1em
+
+section#blog_articles
+    .h1
+        font-size: 1.5em
+
+    h2.h1
+        font-size: 2.5em
+
+.h1 a:hover
+    color: $color_sienna !important

@@ -122,7 +122,7 @@
                     Использовать материалы сайта запрещено
                 </div>
                 <div>
-                    <a href="/policy" class="policy-link">
+                    <a href="/policy/" class="policy-link">
                         Политики конфиденциальности и соглашения
                     </a>
                 </div>
