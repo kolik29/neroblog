@@ -1,0 +1,44 @@
+@font-face {
+font-family: 'Cuprum';
+src: url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-BoldItalic.eot);
+src: local('Cuprum Bold Italic'), local('Cuprum-BoldItalic'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-BoldItalic.eot?#iefix) format('embedded-opentype'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-BoldItalic.woff) format('woff'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-BoldItalic.ttf) format('truetype');
+font-weight: bold;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Cuprum';
+src: url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Italic.eot);
+src: local('Cuprum Italic'), local('Cuprum-Italic'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Italic.eot?#iefix) format('embedded-opentype'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Italic.woff) format('woff'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Italic.ttf) format('truetype');
+font-weight: normal;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Cuprum';
+src: url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Regular.eot);
+src: local('Cuprum Regular'), local('Cuprum-Regular'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Regular.eot?#iefix) format('embedded-opentype'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Regular.woff) format('woff'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Regular.ttf) format('truetype');
+font-weight: normal;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Cuprum';
+src: url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Bold.eot);
+src: local('Cuprum Bold'), local('Cuprum-Bold'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Bold.eot?#iefix) format('embedded-opentype'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Bold.woff) format('woff'),
+url(//neroblog.ru/wp-content/themes/avline/fonts/Cuprum/Cuprum-Bold.ttf) format('truetype');
+font-weight: bold;
+font-style: normal;
+font-display: swap;
+}

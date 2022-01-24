@@ -85,6 +85,7 @@ global $post;?>
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_excerpt(); ?>
                             </a>
+                            <a href="<?php the_permalink(); ?>" class="font-family_roboto button button__border display_none display_block--425px font-align_center">Читать далее</a>
                         </div>
                     </div>
                 <?php endforeach; ?>

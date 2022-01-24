@@ -31,7 +31,7 @@
             <?php else: ?>
                 <a href="/" class="logo display_grid">
             <?php endif; ?>
-                <img src="<?=get_template_directory_uri();?>/img/logo_brown.svg" alt="">
+                <img src="<?=get_template_directory_uri();?>/img/logo_brown.svg" alt="" width="145" height="38">
                 <div class="logo__cat" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
             <?php if (is_front_page()): ?>
                 </span>

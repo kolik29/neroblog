@@ -1,0 +1,98 @@
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald Light'), local('Oswald-Light'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlight.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlight.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlight.ttf) format('truetype');
+font-weight: 300;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald Regular'), local('Oswald-Regular'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregular.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregular.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregular.ttf) format('truetype');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald DemiBold'), local('Oswald-DemiBold'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibold.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibold.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibold.ttf) format('truetype');
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald RegularItalic'), local('Oswald-RegularItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregularitalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregularitalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldregularitalic.ttf) format('truetype');
+font-weight: 400;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald MediumItalic'), local('Oswald-MediumItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmediumitalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmediumitalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmediumitalic.ttf) format('truetype');
+font-weight: 500;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald ExtraLightItalic'), local('Oswald-ExtraLightItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralightitalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralightitalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralightitalic.ttf) format('truetype');
+font-weight: 200;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald HeavyItalic'), local('Oswald-HeavyItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavyitalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavyitalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavyitalic.ttf) format('truetype');
+font-weight: 800;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald Heavy'), local('Oswald-Heavy'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavy.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavy.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldheavy.ttf) format('truetype');
+font-weight: 800;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald LightItalic'), local('Oswald-LightItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlightitalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlightitalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldlightitalic.ttf) format('truetype');
+font-weight: 300;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald Medium'), local('Oswald-Medium'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmedium.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmedium.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldmedium.ttf) format('truetype');
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald ExtraLight'), local('Oswald-ExtraLight'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralight.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralight.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldextralight.ttf) format('truetype');
+font-weight: 200;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald BoldItalic'), local('Oswald-BoldItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbolditalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbolditalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbolditalic.ttf) format('truetype');
+font-weight: 700;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald DemiBoldItalic'), local('Oswald-DemiBoldItalic'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibolditalic.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibolditalic.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswalddemibolditalic.ttf) format('truetype');
+font-weight: 600;
+font-style: italic;
+font-display: swap;
+}
+@font-face {
+font-family: 'Oswald';
+src: local('Oswald Bold'), local('Oswald-Bold'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbold.woff2) format('woff2'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbold.woff) format('woff'), url(//neroblog.ru/wp-content/themes/avline/fonts/Oswald/Oswaldbold.ttf) format('truetype');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
+}

@@ -6,7 +6,7 @@
                 <?php else: ?>
                     <a href="/">
                 <?php endif; ?>
-                        <div class="logo" style="mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png'); -webkit-mask-image: url('<?=get_template_directory_uri();?>/img/cat_header.png');"></div>
+                        <img class="logo" src="<?=get_template_directory_uri();?>/img/cat_heade_white.png" alt="">
                 <?php if (is_front_page()): ?>
                     </span>
                 <?php else: ?>
@@ -59,6 +59,10 @@
                                     <?php endif; ?>
                                 <?php endforeach; ?>
                             </ul>
+                            <?php wp_nav_menu([
+                                'menu' => 9,
+                                'container' => false
+                            ]); ?>
                         </div>
                     </div>
                 </div>
@@ -229,18 +233,22 @@
     </div>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript" defer>
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-        ym(87121272, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true,
-                trackHash:true,
-                ecommerce:"dataLayer"
+                ym(87121272, "init", {
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        trackHash:true,
+                        ecommerce:"dataLayer"
+                });
+            }, 5000);
         });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/87121272" style="position:absolute; left:-9999px;" alt="" /></div></noscript>

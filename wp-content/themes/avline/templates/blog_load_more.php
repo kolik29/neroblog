@@ -37,7 +37,7 @@ if (array_key_exists('offset', $_POST))
                 $current_page = $pageNum;
             
             $args = [
-                'format'  => '?PAGE=%#%',
+                'format'  => '?page=%#%',
                 'current' => max(1, $current_page),
                 'total'   => count($posts) / $post_per_page,
                 'prev_text' => '',

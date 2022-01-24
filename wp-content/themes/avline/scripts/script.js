@@ -9,7 +9,7 @@ $(() => {
 		}, (response) => {
             response = JSON.parse(response);
 
-            history.pushState(null, null, '?PAGE=' + (parseInt($(this).data('offset') / $(this).data('count')) + 2));
+            history.pushState(null, null, '?page=' + (parseInt($(this).data('offset') / $(this).data('count')) + 2));
             
             if (response.page) {
                 $(this).closest('.article-load').remove();
@@ -30,10 +30,22 @@ $(() => {
     })
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() >= 100)
-            $('#scroll_top').fadeIn();
-        else
-            $('#scroll_top').fadeOut();
+        if ($(window).width() > 1360) {
+            if ($(this).scrollTop() >= 100)
+                $('#scroll_top').fadeIn();
+            else
+                $('#scroll_top').fadeOut();
+        } else {
+            if ($(this).scrollTop() + $(window).height() >= $('body').height() - $('footer').height() - $('#scroll_top').height() - 300)
+                $('#scroll_top').fadeIn();
+            else
+                $('#scroll_top').fadeOut();
+
+            if ($(this).scrollTop() + $(window).height() >= $('body').height() - $('footer').height() - $('#scroll_top').height())
+                $('#scroll_top .text').addClass('light');
+            else
+                $('#scroll_top .text').removeClass('light');
+        }
     })
 
     $('.js-social-icons__button').on('click', function() {
